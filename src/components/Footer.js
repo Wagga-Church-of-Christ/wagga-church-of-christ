@@ -57,7 +57,7 @@ const Footer = () => (
     <List>
       <Item>
         <Links>
-          <a href="https://cofcaustralia.org/">Australian Churches of Christ</a><br/>
+          <a href="http://cofcaustralia.org/">Australian Churches of Christ</a><br/>
           <a href="https://www.freshhope.org.au/">NSW Churches of Christ</a><br/>
           <a href="https://www.bible.com/en/app">YouVersion Bible App</a><br/>
           <a href="https://www.waggaslifefm.com/">101.9 Wagga's Life FM</a><br/><br/>
