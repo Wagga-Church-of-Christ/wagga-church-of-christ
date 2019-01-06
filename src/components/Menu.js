@@ -2,14 +2,24 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-const Header = styled.header`
-  background: ${props => props.theme.colors.base};
-  width: 100%;
+const ScrollXParent = styled.div`
   height: 3em;
-  padding: 1em 0;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index:20;
+  overflow: hidden;
+`
+
+const Header = styled.header`
+  background: ${props => props.theme.colors.base};
+  height: 3em;
+  margin-bottom: -50px;
+  padding-bottom: calc(1em + 50px);
+  padding-top: 1em;
+  overflow-y: hidden;
+  overflow-x: scroll;
 `
 const Nav = styled.nav`
   width: 100%;
@@ -18,6 +28,7 @@ const Nav = styled.nav`
   padding: 0 1.5em;
 
   ul {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     white-space: nowrap
@@ -26,7 +37,6 @@ const Nav = styled.nav`
   li {
     display: inline-block;
     margin-left: 1em;
-    margin-right: 1em;
     &:first-child {
       position: relative;
       margin: 0;
@@ -51,42 +61,44 @@ const activeLinkStyle = {
 
 const Menu = () => {
   return (
-    <Header>
-      <Nav>
-        <ul>
-          <li>
-            <Link to="/" activeStyle={activeLinkStyle}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about/" activeStyle={activeLinkStyle}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/tag/sermons/" activeStyle={activeLinkStyle}>
-              Sermons
-            </Link>
-          </li>
-          <li>
-            <Link to="/tag/events/" activeStyle={activeLinkStyle}>
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
-              Missions
-            </Link>
-          </li>
-          <li>
-            <Link to="/tag/pastors-blog/" activeStyle={activeLinkStyle}>
-              Pastor's Blog
-            </Link>
-          </li>
-        </ul>
-      </Nav>
-    </Header>
+    <ScrollXParent>
+        <Header>
+          <Nav>
+            <ul>
+              <li>
+                <Link to="/" activeStyle={activeLinkStyle}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/" activeStyle={activeLinkStyle}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/tag/sermons/" activeStyle={activeLinkStyle}>
+                  Sermons
+                </Link>
+              </li>
+              <li>
+                <Link to="/tag/events/" activeStyle={activeLinkStyle}>
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
+                  Missions
+                </Link>
+              </li>
+              <li>
+                <Link to="/tag/pastors-blog/" activeStyle={activeLinkStyle}>
+                  Pastor's Blog
+                </Link>
+              </li>
+            </ul>
+          </Nav>
+        </Header>
+    </ScrollXParent>
   )
 }
 
