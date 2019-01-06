@@ -5,7 +5,11 @@ import styled from 'styled-components'
 const Header = styled.header`
   background: ${props => props.theme.colors.base};
   width: 100%;
-  padding: 1.5em 0;
+  height: 3em;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  z-index:20;
 `
 const Nav = styled.nav`
   width: 100%;
@@ -21,10 +25,10 @@ const Nav = styled.nav`
   li {
     display: inline-block;
     margin-left: 1em;
+    margin-right: 1em;
     &:first-child {
       position: relative;
       margin: 0;
-      flex-basis: 100%;
     }
   }
 
@@ -60,8 +64,23 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact/" activeStyle={activeLinkStyle}>
-              Contact
+            <Link to="/tag/sermons/" activeStyle={activeLinkStyle}>
+              Sermons
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/events/" activeStyle={activeLinkStyle}>
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
+              Missions
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/pastors-blog/" activeStyle={activeLinkStyle}>
+              Pastor's Blog
             </Link>
           </li>
         </ul>

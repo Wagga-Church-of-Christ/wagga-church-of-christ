@@ -26,7 +26,7 @@ const Item = styled.li`
   padding: 0.25em 0;
   width: 100%;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
-    width: auto;
+    width: 40%;
   }
   a {
     font-weight: 600;
@@ -41,38 +41,38 @@ const Item = styled.li`
   }
 `
 
+const Links = styled.p`
+  line-height: 1.6;
+  text-align: center;
+  font-size: small;
+`
+
+const Text = styled.p`
+  text-align: center;
+  font-size: x-small;
+`
+
 const Footer = () => (
   <Wrapper>
     <List>
       <Item>
-        <a
-          href="https://www.contentful.com/"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            src="https://images.ctfassets.net/fo9twyrwpveg/44baP9Gtm8qE2Umm8CQwQk/c43325463d1cb5db2ef97fca0788ea55/PoweredByContentful_LightBackground.svg"
-            style={{ width: '100px' }}
-            alt="Powered by Contentful"
-          />
-        </a>
+        <Links>
+          <a href="https://cofcaustralia.org/">Australian Churches of Christ</a><br/>
+          <a href="https://www.freshhope.org.au/">NSW Churches of Christ</a><br/>
+          <a href="https://www.bible.com/en/app">YouVersion Bible App</a><br/>
+          <a href="https://www.waggaslifefm.com/">101.9 Wagga's Life FM</a><br/><br/>
+        </Links>
+        <Text>
+          We respectfully acknowledge all Aboriginal People of the Wiradjuri Nation who are the traditional custodians of the land on which we meet.
+        </Text>
       </Item>
       <Item>
-        <a
-          href="https://github.com/ryanwiemer/gatsby-starter-gcn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          gatsby-starter-gcn
-        </a>{' '}
-        by{' '}
-        <a
-          href="https://github.com/ryanwiemer"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ryanwiemer
-        </a>
+      <Links>
+          <a href="/members">Members Area</a><br/>
+          <a href="https://github.com/Wagga-Church-of-Christ/churchwebsite">Website Source Code on GitHub</a><br/>
+          <a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Content Editor</a><br/>
+          <a href="mailto:waggachurchofchristpastor@gmail.com">Email the Pastor</a>
+        </Links>
       </Item>
     </List>
   </Wrapper>

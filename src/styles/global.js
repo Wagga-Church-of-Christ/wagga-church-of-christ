@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
   .siteContent {
+    padding-top: 3em;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
