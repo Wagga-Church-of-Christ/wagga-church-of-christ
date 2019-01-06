@@ -53,17 +53,25 @@ const TagTemplate = ({ data, pageContext }) => {
       )}
 
       <Container>
-        <PageTitle small>
-          {numberOfPosts} Posts Tagged: &ldquo;
+        <PageTitle>
           {title}
-          &rdquo;
         </PageTitle>
 
-        <CardList>
-          {posts.slice(skip, limit * currentPage).map(post => (
-            <Card {...post} key={post.id} />
-          ))}
-        </CardList>
+        {isFirstPage ? (
+          <CardList>
+            <Card {...posts[0]} featured />
+            
+            {posts.slice(1).slice(skip, limit * currentPage).map(post => (
+              <Card {...post} key={post.id} />
+            ))}
+          </CardList>
+        ) : (
+          <CardList>
+            {posts.slice(skip, limit * currentPage).map(post => (
+              <Card {...post} key={post.id} />
+            ))}
+          </CardList>
+        )}
       </Container>
       <Pagination context={pageContext} />
     </Layout>

@@ -20,6 +20,7 @@ const Nav = styled.nav`
   ul {
     display: flex;
     justify-content: space-between;
+    white-space: nowrap
   }
 
   li {
