@@ -73,9 +73,6 @@ const Footer = () => (
           <a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Content Editor</a><br/>
           <a href="mailto:waggachurchofchristpastor@gmail.com">Email the Pastor</a>
         </Links>
-        <Text>
-          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />All website content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        </Text>
       </Item>
     </List>
   </Wrapper>
