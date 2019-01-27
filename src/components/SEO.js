@@ -29,14 +29,14 @@ class SEO extends Component {
     if (postSEO || pageSEO) {
       title = postNode.title
       description =
-        postNode.metaDescription === null
+        (postNode.metaDescription === null || postNode.metaDescription === undefined)
           ? postNode.body.childMarkdownRemark.excerpt
           : postNode.metaDescription.internal.content
 
       pageUrl = config.siteUrl + root + pagePath + '/'
     }
     // Use Hero Image for OpenGraph
-    if (postSEO) {
+    if (postSEO && postNode.heroImage !== undefined) {
       image = 'https:' + postNode.heroImage.ogimg.src
       imgWidth = postNode.heroImage.ogimg.width
       imgHeight = postNode.heroImage.ogimg.height

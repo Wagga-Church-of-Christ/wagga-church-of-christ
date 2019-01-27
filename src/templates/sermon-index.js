@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import CardList from '../components/CardList'
-import Card from '../components/Card'
+import SermonCard from '../components/SermonCard'
+import Sermon from '../components/Sermon'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
@@ -25,20 +26,9 @@ const SermonIndexTemplate = ({ data, pageContext }) => {
         </Helmet>
       )}
       <Container>
-        {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured root={root}/>
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} root={root} />
-            ))}
-          </CardList>
-        ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} root={root} />
-            ))}
-          </CardList>
-        )}
+        {posts.map(({ node: post }) => (
+          <SermonCard {...post} root={root} />
+        ))}
       </Container>
       <Pagination context={pageContext} />
     </Layout>
@@ -61,6 +51,12 @@ export const query = graphql`
           speaker
           audioLink
           description {
+            childMarkdownRemark {
+              html
+              excerpt(pruneLength: 80)
+            }
+          }
+          body: description {
             childMarkdownRemark {
               html
               excerpt(pruneLength: 80)

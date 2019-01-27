@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Sermon from '../components/Sermon'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
 import PostLinks from '../components/PostLinks'
@@ -16,12 +17,7 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
 
   const {
     title,
-    slug,
-    body,
-    publishDate,
-    speaker,
-    audioLink,
-    description
+    slug
   } = postNode
 
   const previous = pageContext.prev
@@ -35,8 +31,7 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
       <SEO pagePath={slug} postNode={postNode} postSEO root={root} />
 
       <Container>
-        <PostDate date={publishDate} />
-        <PageBody body={description} />
+        <Sermon { ...postNode }/>
       </Container>
       <PostLinks previous={previous} next={next} root={root}/>
     </Layout>
@@ -56,6 +51,12 @@ export const query = graphql`
         childMarkdownRemark {
           html
           excerpt(pruneLength: 320)
+        }
+      }
+      body: description {
+        childMarkdownRemark {
+          html
+          excerpt(pruneLength: 80)
         }
       }
     }
