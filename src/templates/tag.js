@@ -12,6 +12,7 @@ import Pagination from '../components/Pagination'
 import Container from '../components/Container'
 
 const TagTemplate = ({ data, pageContext }) => {
+  const root = '/'
   const posts = orderBy(
     data.contentfulTag.post,
     // eslint-disable-next-line
@@ -59,16 +60,16 @@ const TagTemplate = ({ data, pageContext }) => {
 
         {isFirstPage ? (
           <CardList>
-            <Card {...posts[0]} featured />
+            <Card {...posts[0]} featured root={root} />
             
             {posts.slice(1).slice(skip, limit * currentPage).map(post => (
-              <Card {...post} key={post.id} />
+              <Card {...post} key={post.id} root={root} />
             ))}
           </CardList>
         ) : (
           <CardList>
             {posts.slice(skip, limit * currentPage).map(post => (
-              <Card {...post} key={post.id} />
+              <Card {...post} key={post.id} root={root} />
             ))}
           </CardList>
         )}
