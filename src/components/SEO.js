@@ -4,7 +4,7 @@ import config from '../utils/siteConfig'
 
 class SEO extends Component {
   render() {
-    const { postNode, pagePath, postSEO, pageSEO, customTitle } = this.props
+    const { postNode, pagePath, postSEO, pageSEO, customTitle, root } = this.props
     let title
     let description
     let image
@@ -18,25 +18,25 @@ class SEO extends Component {
     image = config.siteUrl + config.shareImage
     imgWidth = config.shareImageWidth
     imgHeight = config.shareImageHeight
-    pageUrl = config.siteUrl
+    pageUrl = config.siteUrl + root
 
     if (customTitle) {
       title = postNode.title
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = config.siteUrl + root + pagePath + '/'
     }
 
     // Replace with Page Parameters if post or page
     if (postSEO || pageSEO) {
       title = postNode.title
       description =
-        postNode.metaDescription === null
+        (postNode.metaDescription === null || postNode.metaDescription === undefined)
           ? postNode.body.childMarkdownRemark.excerpt
           : postNode.metaDescription.internal.content
 
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = config.siteUrl + root + pagePath + '/'
     }
     // Use Hero Image for OpenGraph
-    if (postSEO) {
+    if (postSEO && postNode.heroImage !== undefined) {
       image = 'https:' + postNode.heroImage.ogimg.src
       imgWidth = postNode.heroImage.ogimg.width
       imgHeight = postNode.heroImage.ogimg.height

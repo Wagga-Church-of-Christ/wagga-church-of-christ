@@ -12,17 +12,13 @@ import config from '../utils/siteConfig'
 const PastorsBlogIndexTemplate = ({ data, pageContext }) => {
   const root = '/pastors-blog/'
   const posts = data.allContentfulPastorsBlog.edges
-  // posts.forEach(post => {
-  //     post.node.slug = `/pastors-blog/${post.node.slug}`
-  //     console.log(post.node)
-  // });
   const featuredPost = posts[0].node
   const { currentPage } = pageContext
   const isFirstPage = currentPage === 1
 
   return (
     <Layout>
-      <SEO />
+      <SEO root={root} />
       {!isFirstPage && (
         <Helmet>
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
@@ -61,7 +57,7 @@ export const query = graphql`
           title
           id
           slug
-          publishDate(formatString: "MMMM DD, YYYY")
+          publishDate(formatString: "DD MMMM, YYYY")
           heroImage {
             title
             fluid(maxWidth: 1800) {

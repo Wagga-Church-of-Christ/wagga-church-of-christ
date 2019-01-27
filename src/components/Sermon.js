@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-require('prismjs/themes/prism.css')
+import PageTitle from './PageTitle'
+// import Body from './PageBody'
+import PostDate from './PostDate'
 
+const Wrapper = styled.div`
+
+`
 const Body = styled.div`
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
@@ -97,12 +102,27 @@ const Body = styled.div`
   }
 `
 
-const PageBody = props => {
+const PostLinks = ({ title, publishDate, speaker, audioLink, description, ...props }) => {
   return (
-      <Body
-        dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
+    <Wrapper>
+      <PageTitle>{title}</PageTitle>
+      <PostDate date={publishDate} />
+      <Body>
+        <h3>Speaker: {speaker}</h3>
+        <p>
+          <audio controls="controls"><source src={audioLink} type="audio/mpeg" /></audio>
+        </p>
+      </Body>
+
+      <Body 
+        dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }}
       />
+
+      <Body>
+        <a href={audioLink}>Download this audio (right click here and press "Save link as...")</a>
+      </Body>
+    </Wrapper>
   )
 }
 
-export default PageBody
+export default PostLinks

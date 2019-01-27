@@ -9,6 +9,7 @@ import PageBody from '../components/PageBody'
 import SEO from '../components/SEO'
 
 const PageTemplate = ({ data }) => {
+  const root = '/'
   const { title, slug, body } = data.contentfulPage
   const postNode = data.contentfulPage
 
@@ -17,7 +18,7 @@ const PageTemplate = ({ data }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO pagePath={slug} postNode={postNode} pageSEO />
+      <SEO pagePath={slug} postNode={postNode} pageSEO root={root} />
 
       <Container>
         <PageTitle>{title}</PageTitle>
