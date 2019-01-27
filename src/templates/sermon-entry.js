@@ -33,7 +33,7 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
       <Container>
         <Sermon { ...postNode }/>
       </Container>
-      <PostLinks previous={previous} next={next} root={root}/>
+      <PostLinks previous={previous} next={next} root={root} name="Sermon" />
     </Layout>
   )
 }
