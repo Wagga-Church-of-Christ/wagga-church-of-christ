@@ -69,8 +69,6 @@ let urlMap = {
   "Rev": 'RV'
 }
 
-let window
-
 if (window.refTagger === undefined) {
   window.refTagger = {
     settings: {
