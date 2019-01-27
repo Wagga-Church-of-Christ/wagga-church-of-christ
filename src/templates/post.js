@@ -40,7 +40,7 @@ const PostTemplate = ({ data, pageContext }) => {
         <PostDate date={publishDate} />
         <PageBody body={body} />
       </Container>
-      <PostLinks previous={previous} next={next} root={root}/>
+      <PostLinks previous={previous} next={next} root={root} name="Post"/>
     </Layout>
   )
 }

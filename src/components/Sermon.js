@@ -102,7 +102,7 @@ const Body = styled.div`
   }
 `
 
-const PostLinks = ({ title, publishDate, speaker, audioLink, description, ...props }) => {
+const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props }) => {
   return (
     <Wrapper>
       <PageTitle>{title}</PageTitle>
@@ -125,4 +125,4 @@ const PostLinks = ({ title, publishDate, speaker, audioLink, description, ...pro
   )
 }
 
-export default PostLinks
+export default Sermon
