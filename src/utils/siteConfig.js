@@ -1,4 +1,33 @@
+const navbarList = [
+  {
+    name: "Home",
+    href: "/"
+  },
+  {
+    name: "About",
+    href: "/about/"
+  },
+  {
+    name: "Sermons",
+    href: "/tag/sermons/"
+  },
+  {
+    name: "Events",
+    href: "/tag/events/"
+  },
+  {
+    name: "Missions",
+    href: "/tag/missions/"
+  },
+  {
+    name: "Pastor's Blog",
+    href: "/tag/pastors-blog/"
+  }
+]
+
+
 module.exports = {
+  navbarList,
   siteTitle: 'Wagga Church of Christ',
   siteTitleAlt: 'Wagga Church of Christ', // This allows an alternative site title for SEO schema.
   publisher: 'Wagga Church of Christ', // Organization name used for SEO schema

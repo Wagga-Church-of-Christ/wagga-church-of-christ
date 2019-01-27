@@ -31,6 +31,8 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-typescript`,
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {

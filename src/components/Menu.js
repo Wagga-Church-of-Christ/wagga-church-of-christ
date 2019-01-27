@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
+import Menu from './MenuResponsive'
+
+import { navbarList } from '../utils/siteConfig'
+
 const ScrollXParent = styled.div`
   height: 3em;
   position: fixed;
@@ -14,13 +18,17 @@ const ScrollXParent = styled.div`
 
 const Header = styled.header`
   background: ${props => props.theme.colors.base};
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3em;
-  margin-bottom: -50px;
-  padding-bottom: calc(1em + 50px);
-  padding-top: 1em;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  position: fixed;
+  z-index:20;
+  padding: 1em;
 `
+
+// const nav = priorityNav.init();
+
 const Nav = styled.nav`
   width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
@@ -55,51 +63,30 @@ const Nav = styled.nav`
   }
 `
 
+
+
 const activeLinkStyle = {
   color: 'white',
 }
 
-const Menu = () => {
-  return (
-    <ScrollXParent>
-        <Header>
-          <Nav>
-            <ul>
-              <li>
-                <Link to="/" activeStyle={activeLinkStyle}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about/" activeStyle={activeLinkStyle}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/tag/sermons/" activeStyle={activeLinkStyle}>
-                  Sermons
-                </Link>
-              </li>
-              <li>
-                <Link to="/tag/events/" activeStyle={activeLinkStyle}>
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
-                  Missions
-                </Link>
-              </li>
-              <li>
-                <Link to="/tag/pastors-blog/" activeStyle={activeLinkStyle}>
-                  Pastor's Blog
-                </Link>
-              </li>
-            </ul>
-          </Nav>
-        </Header>
-    </ScrollXParent>
-  )
-}
+// const Menu = () => {
+//   return (
+//     <Header>
+//       <Nav>
+//           <ul>
+//             {navbarList.map(item => (
+//               <li>
+//                 <Link to={item.href} activeStyle={activeLinkStyle}>
+//                   {item.name}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+//       </Nav>
+//     </Header>
+//   )
+// }
+
+// Menu = MenuResponsive
 
 export default Menu
