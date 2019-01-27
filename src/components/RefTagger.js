@@ -108,8 +108,7 @@ function morphBibleLinks(link) {
       verse = chapterVerse.substring(lastDotRef+1, lastDashRef)
     }
   }
-
-  book = book.replace('%20', ' ')
+  
   book = book.replace(/[^1-3a-z ]/gi, '')
 
   // console.log(book)
