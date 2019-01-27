@@ -69,23 +69,6 @@ let urlMap = {
   "Rev": 'RV'
 }
 
-if (window.refTagger === undefined) {
-  window.refTagger = {
-    settings: {
-      bibleVersion: "NASB",			
-      roundCorners: true,
-      socialSharing: [],
-      tagChapters: true,
-      customStyle : {
-        heading: {
-          backgroundColor : "#28476b",
-          color : "#ffffff"
-        }
-      }
-    }
-  };
-}
-
 // https://stackoverflow.com/a/47776379
 function rafAsync() {
   return new Promise(resolve => {
@@ -159,6 +142,23 @@ class RefTagger extends React.Component {
   }
 
   addScript() {
+    if (window.refTagger === undefined) {
+      window.refTagger = {
+        settings: {
+          bibleVersion: "NASB",			
+          roundCorners: true,
+          socialSharing: [],
+          tagChapters: true,
+          customStyle : {
+            heading: {
+              backgroundColor : "#28476b",
+              color : "#ffffff"
+            }
+          }
+        }
+      };
+    }
+
     var el, s;
     el = document.createElement('script');
     el.type = 'text/javascript';
