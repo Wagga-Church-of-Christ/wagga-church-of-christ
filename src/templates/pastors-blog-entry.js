@@ -6,16 +6,13 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
-import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDate from '../components/PostDate'
 import SEO from '../components/SEO'
 
 const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
   const root = '/pastors-blog/'
-
   const postNode = data.contentfulPastorsBlog
-  // postNode.slug = `/pastors-blog/${postNode.slug}`
 
   console.log(pageContext)
 
@@ -24,20 +21,11 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
     slug,
     heroImage,
     body,
-    publishDate,
-    tags,
+    publishDate
   } = postNode
-//   const postNode = data.contentfulPastorsBlog
 
   const previous = pageContext.prev
   const next = pageContext.next
-
-  // if (previous !== null) {
-  //   previous.slug = `/pastors-blog/${previous.slug}`
-  // }
-  // if (next !== null) {
-  //   next.slug = `/pastors-blog/${next.slug}`
-  // }
 
   return (
     <Layout>
@@ -49,7 +37,6 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
       <Hero title={title} image={heroImage} height={'50vh'} />
 
       <Container>
-        {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
         <PageBody body={body} />
       </Container>
@@ -70,11 +57,6 @@ export const query = graphql`
       }
       publishDate(formatString: "MMMM DD, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-      tags {
-        title
-        id
-        slug
-      }
       heroImage {
         title
         fluid(maxWidth: 1800) {
