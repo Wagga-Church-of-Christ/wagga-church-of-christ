@@ -82,6 +82,83 @@ async function isRefTaggerLoaded() {
   }
   return true;
 }
+
+
+function morphBibleLinks(link) {
+  let verseReference = link.getAttribute('data-reference');
+  // console.log(verseReference)
+  let lastSpaceRef = verseReference.lastIndexOf(' ')
+  let book = verseReference.substring(0, lastSpaceRef)
+  let chapterVerse = verseReference.substring(lastSpaceRef+1)
+
+  let lastDotRef = chapterVerse.lastIndexOf('.')
+  let verse
+  let chapter
+
+  if (lastDotRef === -1) {
+    verse = 1
+    chapter = chapterVerse
+  } else {
+    chapter = chapterVerse.substring(0, lastDotRef)
+    let lastDashRef = chapterVerse.lastIndexOf('-')
+
+    if (lastDashRef === -1) {
+      verse = chapterVerse.substring(lastDotRef+1)
+    } else {
+      verse = chapterVerse.substring(lastDotRef+1, lastDashRef)
+    }
+  }
+
+  book = book.replace('%20', ' ')
+  book = book.replace(/[^1-3a-z ]/gi, '')
+
+  // console.log(book)
+  // console.log(chapterVerse)
+  // console.log(chapter)
+  // console.log(verse)
+
+  let newBookRef = urlMap[book]
+
+  let newURL = `http://biblewebapp.com/study/?w1=bible&v1=${newBookRef}${chapter}_${verse}`
+
+  let newLink = document.createElement('a');
+  newLink.innerHTML = link.innerHTML;
+  newLink.href = newURL
+
+  let parent = link.parentElement
+
+  parent.insertBefore(newLink, link)
+  link.remove()
+}
+
+function observeBibleLinks(mutationList, observer) {
+  console.log(mutationList)
+
+  mutationList.forEach(mutation => {
+    console.log(mutation.type)
+    if (mutation.type === 'childList') {
+      mutation.addedNodes.forEach(node => {
+        if (node.nodeType === 1) {
+          // console.log(node)
+          let dataReference = node.getAttribute('data-reference')
+          console.log(dataReference)
+          if (dataReference !== null) {
+            morphBibleLinks(node)
+            // console.log(node)
+          }
+        }
+      })
+    }
+  });
+}
+
+var observerOptions = {
+  childList: true,
+  attributes: true,
+  subtree: true
+}
+var observer = new MutationObserver(observeBibleLinks);
+observer.observe(document.body, observerOptions);
   
 // https://github.com/Faithlife/react-reftagger/blob/81e7868963972fcad4fcd828c345558c12750ce3/index.js
 class RefTagger extends React.Component {
@@ -104,45 +181,7 @@ class RefTagger extends React.Component {
     isRefTaggerLoaded()
     .then(() => {
       window.refTagger.tag()
-      let bibleLinks = document.getElementsByClassName("rtBibleRef")
 
-      for (let link of bibleLinks) {
-        let verseReference = link.href.substring(link.href.lastIndexOf('/')+1);
-        let lastSpaceRef = verseReference.lastIndexOf('%20')
-        let book = verseReference.substring(0, lastSpaceRef)
-        let chapterVerse = verseReference.substring(lastSpaceRef+3)
-  
-        let lastDotRef = chapterVerse.lastIndexOf('.')
-        let verse
-        let chapter
-  
-        if (lastDotRef === -1) {
-          verse = 1
-          chapter = chapterVerse
-        } else {
-          chapter = chapterVerse.substring(0, lastDotRef)
-          let lastDashRef = chapterVerse.lastIndexOf('-')
-  
-          if (lastDashRef === -1) {
-            verse = chapterVerse.substring(lastDotRef+1)
-          } else {
-            verse = chapterVerse.substring(lastDotRef+1, lastDashRef)
-          }
-        }
-  
-        book = book.replace('%20', ' ')
-        book = book.replace(/[^1-3a-z ]/gi, '')
-  
-        let newBookRef = urlMap[book]
-  
-        let newURL = `http://biblewebapp.com/study/?w1=bible&v1=${newBookRef}${chapter}_${verse}`
-        link.href = newURL
-
-        link.removeAttribute('class')
-        link.removeAttribute('data-reference')
-        link.removeAttribute('data-version')
-        link.removeAttribute('data-purpose')
-      }
     });
   }
 
