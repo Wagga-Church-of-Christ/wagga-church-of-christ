@@ -91,7 +91,7 @@ const Menu = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/tag/pastors-blog/" activeStyle={activeLinkStyle}>
+                <Link to="/pastors-blog/" activeStyle={activeLinkStyle}>
                   Pastor's Blog
                 </Link>
               </li>

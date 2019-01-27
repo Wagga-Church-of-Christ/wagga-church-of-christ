@@ -9,9 +9,13 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 
-const Index = ({ data, pageContext }) => {
-  const root = '/'
-  const posts = data.allContentfulPost.edges
+const PastorsBlogIndexTemplate = ({ data, pageContext }) => {
+  const root = '/pastors-blog/'
+  const posts = data.allContentfulPastorsBlog.edges
+  // posts.forEach(post => {
+  //     post.node.slug = `/pastors-blog/${post.node.slug}`
+  //     console.log(post.node)
+  // });
   const featuredPost = posts[0].node
   const { currentPage } = pageContext
   const isFirstPage = currentPage === 1
@@ -27,7 +31,7 @@ const Index = ({ data, pageContext }) => {
       <Container>
         {isFirstPage ? (
           <CardList>
-            <Card {...featuredPost} featured root={root} />
+            <Card {...featuredPost} featured root={root}/>
             {posts.slice(1).map(({ node: post }) => (
               <Card key={post.id} {...post} root={root} />
             ))}
@@ -47,7 +51,7 @@ const Index = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
+    allContentfulPastorsBlog(
       sort: { fields: [publishDate], order: DESC }
       limit: $limit
       skip: $skip
@@ -76,4 +80,4 @@ export const query = graphql`
   }
 `
 
-export default Index
+export default PastorsBlogIndexTemplate

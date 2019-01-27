@@ -11,8 +11,14 @@ import PostLinks from '../components/PostLinks'
 import PostDate from '../components/PostDate'
 import SEO from '../components/SEO'
 
-const PostTemplate = ({ data, pageContext }) => {
-  const root = '/'
+const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
+  const root = '/pastors-blog/'
+
+  const postNode = data.contentfulPastorsBlog
+  // postNode.slug = `/pastors-blog/${postNode.slug}`
+
+  console.log(pageContext)
+
   const {
     title,
     slug,
@@ -20,11 +26,18 @@ const PostTemplate = ({ data, pageContext }) => {
     body,
     publishDate,
     tags,
-  } = data.contentfulPost
-  const postNode = data.contentfulPost
+  } = postNode
+//   const postNode = data.contentfulPastorsBlog
 
   const previous = pageContext.prev
   const next = pageContext.next
+
+  // if (previous !== null) {
+  //   previous.slug = `/pastors-blog/${previous.slug}`
+  // }
+  // if (next !== null) {
+  //   next.slug = `/pastors-blog/${next.slug}`
+  // }
 
   return (
     <Layout>
@@ -47,7 +60,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPost(slug: { eq: $slug }) {
+    contentfulPastorsBlog(slug: { eq: $slug }) {
       title
       slug
       metaDescription {
@@ -83,4 +96,4 @@ export const query = graphql`
   }
 `
 
-export default PostTemplate
+export default PastorsBlogEntryTemplate
