@@ -10,18 +10,18 @@ import PostLinks from '../components/PostLinks'
 import PostDate from '../components/PostDate'
 import SEO from '../components/SEO'
 
-const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
-  const root = '/pastors-blog/'
-  const postNode = data.contentfulPastorsBlog
-
-  console.log(pageContext)
+const SermonEntryTemplate = ({ data, pageContext }) => {
+  const root = '/sermons/'
+  const postNode = data.contentfulSermon
 
   const {
     title,
     slug,
-    heroImage,
     body,
-    publishDate
+    publishDate,
+    speaker,
+    audioLink,
+    description
   } = postNode
 
   const previous = pageContext.prev
@@ -34,11 +34,9 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO root={root} />
 
-      <Hero title={title} image={heroImage} height={'50vh'} />
-
       <Container>
         <PostDate date={publishDate} />
-        <PageBody body={body} />
+        <PageBody body={description} />
       </Container>
       <PostLinks previous={previous} next={next} root={root}/>
     </Layout>
@@ -47,28 +45,14 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPastorsBlog(slug: { eq: $slug }) {
+    contentfulSermon(slug: { eq: $slug }) {
       title
       slug
-      metaDescription {
-        internal {
-          content
-        }
-      }
       publishDate(formatString: "DD MMMM, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-      heroImage {
-        title
-        fluid(maxWidth: 1800) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
-        ogimg: resize(width: 1800) {
-          src
-          width
-          height
-        }
-      }
-      body {
+      speaker
+      audioLink
+      description {
         childMarkdownRemark {
           html
           excerpt(pruneLength: 320)
@@ -78,4 +62,4 @@ export const query = graphql`
   }
 `
 
-export default PastorsBlogEntryTemplate
+export default SermonEntryTemplate
