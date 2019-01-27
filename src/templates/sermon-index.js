@@ -30,7 +30,7 @@ const SermonIndexTemplate = ({ data, pageContext }) => {
           <SermonCard key={post.id} {...post} root={root} />
         ))}
       </Container>
-      <Pagination context={pageContext} />
+      <Pagination context={pageContext} root={root} />
     </Layout>
   )
 }
@@ -53,13 +53,13 @@ export const query = graphql`
           description {
             childMarkdownRemark {
               html
-              excerpt(pruneLength: 80)
+              excerpt(pruneLength: 250)
             }
           }
           body: description {
             childMarkdownRemark {
               html
-              excerpt(pruneLength: 80)
+              excerpt(pruneLength: 250)
             }
           }
         }

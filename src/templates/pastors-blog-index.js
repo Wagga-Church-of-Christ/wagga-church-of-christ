@@ -40,7 +40,7 @@ const PastorsBlogIndexTemplate = ({ data, pageContext }) => {
           </CardList>
         )}
       </Container>
-      <Pagination context={pageContext} />
+      <Pagination context={pageContext} root={root} />
     </Layout>
   )
 }
