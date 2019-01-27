@@ -137,6 +137,11 @@ class RefTagger extends React.Component {
   
         let newURL = `http://biblewebapp.com/study/?w1=bible&v1=${newBookRef}${chapter}_${verse}`
         link.href = newURL
+
+        link.removeAttribute('class')
+        link.removeAttribute('data-reference')
+        link.removeAttribute('data-version')
+        link.removeAttribute('data-purpose')
       }
     });
   }
