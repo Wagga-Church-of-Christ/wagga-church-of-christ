@@ -108,7 +108,7 @@ function morphBibleLinks(link) {
       verse = chapterVerse.substring(lastDotRef+1, lastDashRef)
     }
   }
-  
+
   book = book.replace(/[^1-3a-z ]/gi, '')
 
   // console.log(book)
@@ -150,14 +150,6 @@ function observeBibleLinks(mutationList, observer) {
     }
   });
 }
-
-var observerOptions = {
-  childList: true,
-  attributes: true,
-  subtree: true
-}
-var observer = new MutationObserver(observeBibleLinks);
-observer.observe(document.body, observerOptions);
   
 // https://github.com/Faithlife/react-reftagger/blob/81e7868963972fcad4fcd828c345558c12750ce3/index.js
 class RefTagger extends React.Component {
@@ -185,6 +177,14 @@ class RefTagger extends React.Component {
   }
 
   addScript() {
+    var observerOptions = {
+      childList: true,
+      attributes: true,
+      subtree: true
+    }
+    var observer = new MutationObserver(observeBibleLinks);
+    observer.observe(document.body, observerOptions);
+
     if (window.refTagger === undefined) {
       window.refTagger = {
         settings: {
