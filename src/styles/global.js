@@ -99,6 +99,14 @@ const GlobalStyle = createGlobalStyle`
   	height: auto;
   }
 
+  .rtTooltipBrandLink a {
+    display: none; !important
+  }
+
+  .rtTooltipMoreLink {
+    display: none; !important
+  }
+
   button,
   input {
     font-family: inherit;

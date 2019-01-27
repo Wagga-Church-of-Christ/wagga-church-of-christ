@@ -7,6 +7,8 @@ import theme from '../styles/theme'
 import config from '../utils/siteConfig'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
+import RefTagger from './RefTagger'
+
 
 const Template = ({ children }) => {
   return (
@@ -28,6 +30,7 @@ const Template = ({ children }) => {
         </>
       </ThemeProvider>
       <GlobalStyle />
+      <RefTagger />
     </div>
   )
 }

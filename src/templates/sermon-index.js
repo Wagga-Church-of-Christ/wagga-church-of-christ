@@ -27,7 +27,7 @@ const SermonIndexTemplate = ({ data, pageContext }) => {
       )}
       <Container>
         {posts.map(({ node: post }) => (
-          <SermonCard {...post} root={root} />
+          <SermonCard key={post.id} {...post} root={root} />
         ))}
       </Container>
       <Pagination context={pageContext} />
