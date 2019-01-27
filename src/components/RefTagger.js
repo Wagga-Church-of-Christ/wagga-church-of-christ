@@ -148,7 +148,7 @@ class RefTagger extends React.Component {
         }
   
         book = book.replace('%20', ' ')
-        book = book.replace(/[^0-3a-z ]/gi, '')
+        book = book.replace(/[^1-3a-z ]/gi, '')
   
         let newBookRef = urlMap[book]
   
