@@ -15,9 +15,10 @@ const PastorsBlogIndexTemplate = ({ data, pageContext }) => {
   const featuredPost = posts[0].node
   const { currentPage } = pageContext
   const isFirstPage = currentPage === 1
+  const navigation = pageContext.navigation
 
   return (
-    <Layout>
+    <Layout navigation={navigation} >
       <SEO root={root} />
 
       <Helmet>

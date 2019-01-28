@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 import RefTagger from './RefTagger'
 
 
-const Template = ({ children }) => {
+const Template = ({ children, navigation }) => {
   return (
     <div className="siteRoot">
       <Helmet>
@@ -22,7 +22,7 @@ const Template = ({ children }) => {
 
       <ThemeProvider theme={theme}>
         <>
-        <Menu />        
+        <Menu navigation={navigation} />        
         <div className="siteContent">
           {children}
         </div>

@@ -8,13 +8,14 @@ import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import SEO from '../components/SEO'
 
-const PageTemplate = ({ data }) => {
+const PageTemplate = ({ data, pageContext }) => {
   const root = '/'
   const { title, slug, body } = data.contentfulPage
   const postNode = data.contentfulPage
+  const navigation = pageContext.navigation
 
   return (
-    <Layout>
+    <Layout navigation={navigation} >
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>

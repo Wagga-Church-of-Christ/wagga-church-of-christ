@@ -13,6 +13,7 @@ import SEO from '../components/SEO'
 const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
   const root = '/pastors-blog/'
   const postNode = data.contentfulPastorsBlog
+  const navigation = pageContext.navigation
 
   // console.log(pageContext)
 
@@ -28,7 +29,7 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
   const next = pageContext.next
 
   return (
-    <Layout>
+    <Layout navigation={navigation} >
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>

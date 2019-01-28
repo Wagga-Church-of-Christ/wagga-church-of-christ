@@ -10,15 +10,16 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 
-const SermonIndexTemplate = ({ data, pageContext }) => {
+const SermonIndexTemplate = ({ data, pageContext}) => {
   const root = '/sermons/'
   const posts = data.allContentfulSermon.edges
   const featuredPost = posts[0].node
   const { currentPage } = pageContext
   const isFirstPage = currentPage === 1
+  const navigation = pageContext.navigation
 
   return (
-    <Layout>
+    <Layout navigation={navigation} >
       <SEO root={root} />
       <Helmet>
         <title>{`Sermons - Page ${currentPage}`}</title>

@@ -59,42 +59,17 @@ const activeLinkStyle = {
   color: 'white',
 }
 
-const Menu = () => {
+const Menu = ({navigation}) => {
   return (
     <ScrollXParent>
         <Header>
           <Nav>
             <ul>
-              <li>
-                <Link to="/home" activeStyle={activeLinkStyle}>
-                  Home
+              {navigation.map(({ href, text }) => (
+                <Link key={href} to={href} activeStyle={activeLinkStyle}>
+                  {text}
                 </Link>
-              </li>
-              <li>
-                <Link to="/about/" activeStyle={activeLinkStyle}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/sermons/" activeStyle={activeLinkStyle}>
-                  Sermons
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/tag/events/" activeStyle={activeLinkStyle}>
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
-                  Missions
-                </Link>
-              </li> */}
-              <li>
-                <Link to="/pastors-blog/" activeStyle={activeLinkStyle}>
-                  Pastor's Blog
-                </Link>
-              </li>
+              ))}
             </ul>
           </Nav>
         </Header>
