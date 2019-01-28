@@ -19,11 +19,11 @@ const PastorsBlogIndexTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO root={root} />
-      {!isFirstPage && (
-        <Helmet>
-          <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
-        </Helmet>
-      )}
+
+      <Helmet>
+        <title>{`Pastor's Blog - Page ${currentPage}`}</title>
+      </Helmet>
+
       <Container>
         {isFirstPage ? (
           <CardList>

@@ -80,7 +80,7 @@ const Menu = () => {
                   Sermons
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/tag/events/" activeStyle={activeLinkStyle}>
                   Events
                 </Link>
@@ -89,7 +89,7 @@ const Menu = () => {
                 <Link to="/tag/missions/" activeStyle={activeLinkStyle}>
                   Missions
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/pastors-blog/" activeStyle={activeLinkStyle}>
                   Pastor's Blog
