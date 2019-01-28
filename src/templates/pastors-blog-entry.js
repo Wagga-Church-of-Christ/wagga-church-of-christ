@@ -14,7 +14,7 @@ const PastorsBlogEntryTemplate = ({ data, pageContext }) => {
   const root = '/pastors-blog/'
   const postNode = data.contentfulPastorsBlog
 
-  console.log(pageContext)
+  // console.log(pageContext)
 
   const {
     title,

@@ -131,16 +131,16 @@ function morphBibleLinks(link) {
 }
 
 function observeBibleLinks(mutationList, observer) {
-  console.log(mutationList)
+  // console.log(mutationList)
 
   mutationList.forEach(mutation => {
-    console.log(mutation.type)
+    // console.log(mutation.type)
     if (mutation.type === 'childList') {
       mutation.addedNodes.forEach(node => {
         if (node.nodeType === 1) {
           // console.log(node)
           let dataReference = node.getAttribute('data-reference')
-          console.log(dataReference)
+          // console.log(dataReference)
           if (dataReference !== null) {
             morphBibleLinks(node)
             // console.log(node)
