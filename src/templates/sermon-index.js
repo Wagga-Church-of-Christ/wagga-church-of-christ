@@ -20,11 +20,9 @@ const SermonIndexTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO root={root} />
-      {!isFirstPage && (
-        <Helmet>
-          <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
-        </Helmet>
-      )}
+      <Helmet>
+        <title>{`Sermons - Page ${currentPage}`}</title>
+      </Helmet>
       <Container>
         {posts.map(({ node: post }) => (
           <SermonCard key={post.id} {...post} root={root} />

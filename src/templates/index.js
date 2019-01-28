@@ -1,79 +1,51 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
 import Helmet from 'react-helmet'
-import Container from '../components/Container'
-import Pagination from '../components/Pagination'
-import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
+import Layout from '../components/Layout'
+import Container from '../components/Container'
+import PageTitle from '../components/PageTitle'
+import PageBody from '../components/PageBody'
+import SEO from '../components/SEO'
 
-const Index = ({ data, pageContext }) => {
+const PageTemplate = ({ data }) => {
   const root = '/'
-  const posts = data.allContentfulPost.edges
-  const featuredPost = posts[0].node
-  const { currentPage } = pageContext
-  const isFirstPage = currentPage === 1
+  const { title, slug, body } = data.contentfulPage
+  const postNode = data.contentfulPage
 
   return (
     <Layout>
-      <SEO root={root}/>
-      {!isFirstPage && (
-        <Helmet>
-          <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
-        </Helmet>
-      )}
+      <Helmet>
+        <title>{`${title} - ${config.siteTitle}`}</title>
+      </Helmet>
+      <SEO pagePath={'/'} postNode={postNode} pageSEO root={root} />
+
       <Container>
-        {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured root={root} />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} root={root} />
-            ))}
-          </CardList>
-        ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} root={root} />
-            ))}
-          </CardList>
-        )}
+        <PageTitle>{title}</PageTitle>
+        <PageBody body={body} />
       </Container>
-      <Pagination context={pageContext} root={root} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
-      sort: { fields: [publishDate], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          title
-          id
-          slug
-          publishDate(formatString: "DD MMMM, YYYY")
-          heroImage {
-            title
-            fluid(maxWidth: 1800) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
-          }
-          body {
-            childMarkdownRemark {
-              html
-              excerpt(pruneLength: 80)
-            }
-          }
+  query($slug: String!) {
+    contentfulPage(slug: { eq: $slug }) {
+      title
+      slug
+      metaDescription {
+        internal {
+          content
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
+          excerpt(pruneLength: 320)
         }
       }
     }
   }
 `
 
-export default Index
+export default PageTemplate
