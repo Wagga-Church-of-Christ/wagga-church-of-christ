@@ -14,6 +14,7 @@ import SEO from '../components/SEO'
 const SermonEntryTemplate = ({ data, pageContext }) => {
   const root = '/sermons/'
   const postNode = data.contentfulSermon
+  const navigation = pageContext.navigation
 
   const {
     title,
@@ -24,7 +25,7 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
   const next = pageContext.next
 
   return (
-    <Layout>
+    <Layout navigation={navigation} >
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>

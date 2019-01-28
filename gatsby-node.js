@@ -4,20 +4,62 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const landingPage = new Promise((resolve, reject) => {
+  const allCompletePromise = getNavigationConfig(graphql)
+  .then(navigation => {
+    // console.log(navigation)
+
+    let promises = []
+    
+    promises.push(createLandingPage(createPage, navigation))
+    promises.push(createPastorsBlog(createPage, graphql, navigation))
+    promises.push(createSermons(createPage, graphql, navigation))
+    promises.push(createGenericPages(createPage, graphql, navigation))
+
+    return Promise.all(promises)
+  })
+ 
+  return allCompletePromise
+}
+
+function getNavigationConfig(graphql) {
+  const navigationPromise = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        contentfulConfiguration(name: {eq: "navigation"}) {
+          data {
+            text
+            href
+          }
+        }
+      }
+    `).then(result => {
+      let navigation = result.data.contentfulConfiguration.data
+      resolve(navigation)
+    })
+  })
+
+  return navigationPromise
+}
+
+function createLandingPage(createPage, navigation) {
+  const landingPagePromise = new Promise((resolve, reject) => {
     // Create main home page
     createPage({
       path: `/`,
       component: path.resolve(`./src/templates/index.js`),
       context: {
         slug: 'home',
+        navigation
       },
     })
     resolve()
   })
 
+  return landingPagePromise
+}
 
-  const loadPastorsBlog = new Promise((resolve, reject) => {
+function createPastorsBlog(createPage, graphql, navigation) {
+  const pastorsBlogPromise = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulPastorsBlog(
@@ -49,6 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
           skip: 0,
           numPages: numPages + 1,
           currentPage: 1,
+          navigation
         },
       })
 
@@ -62,6 +105,7 @@ exports.createPages = ({ graphql, actions }) => {
             skip: i * postsPerPage + postsPerFirstPage,
             numPages: numPages + 1,
             currentPage: i + 2,
+            navigation
           },
         })
       })
@@ -77,6 +121,7 @@ exports.createPages = ({ graphql, actions }) => {
             slug: edge.node.slug,
             prev,
             next,
+            navigation
           },
         })
       })
@@ -84,8 +129,11 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
+  return pastorsBlogPromise
+}
 
-  const loadSermons = new Promise((resolve, reject) => {
+function createSermons(createPage, graphql, navigation) {
+  const sermonsPromise = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulSermon(
@@ -116,6 +164,7 @@ exports.createPages = ({ graphql, actions }) => {
           skip: 0,
           numPages: numPages + 1,
           currentPage: 1,
+          navigation
         },
       })
 
@@ -129,6 +178,7 @@ exports.createPages = ({ graphql, actions }) => {
             skip: i * postsPerPage + postsPerFirstPage,
             numPages: numPages + 1,
             currentPage: i + 2,
+            navigation
           },
         })
       })
@@ -144,6 +194,7 @@ exports.createPages = ({ graphql, actions }) => {
             slug: edge.node.slug,
             prev,
             next,
+            navigation
           },
         })
       })
@@ -151,7 +202,11 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  const loadPages = new Promise((resolve, reject) => {
+  return sermonsPromise
+}
+
+function createGenericPages(createPage, graphql, navigation) {
+  const pagesPromise = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulPage {
@@ -170,6 +225,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/page.js`),
           context: {
             slug: node.slug,
+            navigation
           },
         })
       })
@@ -177,5 +233,8 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all([landingPage, loadPastorsBlog, loadSermons, loadPages])
+  return pagesPromise
 }
+
+
+
