@@ -57,20 +57,33 @@ const Footer = () => (
     <List>
       <Item>
         <Links>
-          <a href="http://cofcaustralia.org/">Australian Churches of Christ</a><br/>
-          <a href="https://www.freshhope.org.au/">NSW Churches of Christ</a><br/>
-          <a href="https://www.bible.com/en/app">YouVersion Bible App</a><br/>
-          <a href="https://www.waggaslifefm.com/">101.9 Wagga's Life FM</a><br/><br/>
+          <a href="http://cofcaustralia.org/">Australian Churches of Christ</a>
         </Links>
+        <Links>
+          <a href="https://www.freshhope.org.au/">NSW Churches of Christ</a>
+        </Links>
+        <Links>
+          <a href="http://biblewebapp.com/">Bible Study Web App</a>
+        </Links>
+        <Links>
+          <a href="https://www.waggaslifefm.com/">101.9 Wagga's Life FM</a>
+        </Links>
+        <br/>
         <Text>
           We respectfully acknowledge all Aboriginal People of the Wiradjuri Nation who are the traditional custodians of the land on which we meet.
         </Text>
       </Item>
       <Item>
         <Links>
-          <a href="/members">Members Area</a><br/>
-          <a href="https://github.com/Wagga-Church-of-Christ/churchwebsite">Website Source Code on GitHub</a><br/>
-          <a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Content Editor</a><br/>
+          <a href="/members">Members Area</a>
+        </Links>
+        <Links>
+          <a href="https://github.com/Wagga-Church-of-Christ/churchwebsite">Website Source Code on GitHub</a>
+        </Links>
+        <Links>
+          <a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Content Editor</a>
+        </Links>
+        <Links>
           <a href="mailto:waggachurchofchristpastor@gmail.com">Email the Pastor</a>
         </Links>
       </Item>
