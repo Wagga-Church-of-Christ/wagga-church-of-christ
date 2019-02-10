@@ -57,6 +57,10 @@ const Footer = () => (
     <List>
       <Item>
         <Links>
+          <a href="mailto:waggachurchofchristpastor@gmail.com">
+            Email the Pastor</a>
+        </Links>
+        <Links>
           <a href="http://cofcaustralia.org/">Australian Churches of Christ</a>
         </Links>
         <Links>
@@ -70,7 +74,9 @@ const Footer = () => (
         </Links>
         <br/>
         <Text>
-          We respectfully acknowledge all Aboriginal People of the Wiradjuri Nation who are the traditional custodians of the land on which we meet.
+          We respectfully acknowledge all Aboriginal People of the Wiradjuri 
+          Nation who are the traditional custodians of the land on which we 
+          meet.
         </Text>
       </Item>
       <Item>
@@ -78,13 +84,14 @@ const Footer = () => (
           <a href="/members">Members Area</a>
         </Links>
         <Links>
-          <a href="https://github.com/Wagga-Church-of-Christ/churchwebsite">Website Source Code on GitHub</a>
+          <a href="https://github.com/Wagga-Church-of-Christ/churchwebsite">
+            Website source code on GitHub</a>
         </Links>
         <Links>
-          <a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Content Editor</a>
+          <a href="/how-to-edit-website">How to edit website content</a>
         </Links>
         <Links>
-          <a href="mailto:waggachurchofchristpastor@gmail.com">Email the Pastor</a>
+          <a href="/edit">Content Editor</a>
         </Links>
       </Item>
     </List>
