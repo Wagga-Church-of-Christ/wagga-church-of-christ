@@ -28,23 +28,23 @@ const Item = styled.li`
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     width: 40%;
   }
-  a {
-    font-weight: 600;
-    transition: all 0.2s;
-    color: ${props => props.theme.colors.base};
-    &:hover {
-      color: ${props => props.theme.colors.highlight};
-    }
-    &:visited {
-      color: ${props => props.theme.colors.base};
-    }
-  }
 `
 
 const Links = styled.p`
   line-height: 1.6;
   text-align: center;
   font-size: small;
+  a {
+    font-weight: 600;
+    transition: all 0.2s;
+    color: ${props => props.theme.colors.base};
+    &:hover {
+      color: ${props => props.theme.colors.highlight} !important;
+    }
+    &:visited {
+      color: ${props => props.theme.colors.base};
+    }
+  }
 `
 
 const Text = styled.p`
