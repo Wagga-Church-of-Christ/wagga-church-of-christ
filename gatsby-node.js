@@ -14,6 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
     promises.push(createPastorsBlog(createPage, graphql, navigation))
     promises.push(createSermons(createPage, graphql, navigation))
     promises.push(createGenericPages(createPage, graphql, navigation))
+    promises.push(createRedirects(createPage, graphql, navigation))
 
     return Promise.all(promises)
   })
@@ -39,6 +40,39 @@ function getNavigationConfig(graphql) {
   })
 
   return navigationPromise
+}
+
+function createRedirects(createPage, graphql, navigation) {
+  const redirectsPromise = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        contentfulConfiguration(name: {eq: "redirects"}) {
+          data {
+            slug
+            href
+          }
+        }
+      }
+    `).then(result => {
+
+      const redirectData = result.data.contentfulConfiguration.data
+
+      redirectData.map(({ slug, href }) => {
+        createPage({
+          path: `${slug}/`,
+          component: path.resolve(`./src/templates/redirect.js`),
+          context: {
+            slug: slug,
+            navigation,
+            redirect: href
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
+  return redirectsPromise
 }
 
 function createLandingPage(createPage, navigation) {
