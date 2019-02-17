@@ -124,8 +124,6 @@ const SermonDate = props => {
   )
 }
 
-export default PostDate
-
 const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props }) => {
   return (
     <Wrapper>
