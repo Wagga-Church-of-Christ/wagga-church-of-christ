@@ -123,6 +123,7 @@ function morphBibleLinks(link) {
   let newLink = document.createElement('a');
   newLink.innerHTML = link.innerHTML;
   newLink.href = newURL
+  newLink.target = '_blank';
 
   let parent = link.parentElement
 
