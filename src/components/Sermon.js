@@ -132,7 +132,7 @@ const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props 
       <Body>
         <h3>Speaker: {speaker}</h3>
         <p>
-          <audio controls="controls"><source src={audioLink} type="audio/mpeg" /></audio>
+          <audio style="width: 100%;" controls="controls"><source src={audioLink} type="audio/mpeg" /></audio>
         </p>
       </Body>
 
