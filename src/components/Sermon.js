@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PageTitle from './PageTitle'
 // import Body from './PageBody'
-import PostDate from './PostDate'
+// import PostDate from './PostDate'
 
 const Wrapper = styled.div`
 
@@ -102,11 +102,35 @@ const Body = styled.div`
   }
 `
 
+const DateWrapper = styled.div`
+  margin: 0 auto 2em;
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
+`
+
+const Date = styled.p`
+  display: inline-block;
+  span {
+    font-weight: 600;
+  }
+`
+
+const SermonDate = props => {
+  return (
+    <DateWrapper>
+      <Date>
+        <span>Date Sermon was Delivered:</span> {props.date}
+      </Date>
+    </DateWrapper>
+  )
+}
+
+export default PostDate
+
 const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props }) => {
   return (
     <Wrapper>
       <PageTitle>{title}</PageTitle>
-      <PostDate date={publishDate} />
+      <SermonDate date={publishDate} />
       <Body>
         <h3>Speaker: {speaker}</h3>
         <p>
