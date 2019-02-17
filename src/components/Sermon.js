@@ -114,6 +114,10 @@ const Date = styled.p`
   }
 `
 
+const SermonAudio = styled.audio`
+  width: 100%;
+`
+
 const SermonDate = props => {
   return (
     <DateWrapper>
@@ -132,7 +136,7 @@ const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props 
       <Body>
         <h3>Speaker: {speaker}</h3>
         <p>
-          <audio style="width: 100%;" controls="controls"><source src={audioLink} type="audio/mpeg" /></audio>
+          <SermonAudio controls="controls"><source src={audioLink} type="audio/mpeg" /></SermonAudio>
         </p>
       </Body>
 
