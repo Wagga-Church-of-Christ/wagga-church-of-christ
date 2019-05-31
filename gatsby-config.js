@@ -32,10 +32,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-helmet',
     `gatsby-plugin-catch-links`,
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-source-contentful',
@@ -54,9 +52,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images-contentful`,
@@ -74,19 +69,6 @@ module.exports = {
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS,
         head: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.siteTitle,
-        short_name: config.shortTitle,
-        description: config.siteDescription,
-        start_url: '/',
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'minimal-ui',
-        icon: `static${config.siteLogo}`,
       },
     },
     {
