@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import config from '../utils/siteConfig'
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
-import SEO from '../components/SEO'
+import config from '../src/utils/siteConfig'
+import Layout from '../src/components/Layout'
+import Container from '../src/components/Container'
+import PageTitle from '../src/components/PageTitle'
+import PageBody from '../src/components/PageBody'
+import SEO from '../src/components/SEO'
 
 const PageTemplate = ({ data, pageContext }) => {
   const root = '/'

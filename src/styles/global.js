@@ -1,128 +1,130 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-  /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-  */
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed,
-  figure, figcaption, footer, header, hgroup,
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
+const GlobalStyle = createGlobalStyle``
 
-  /* Added to Fix Footer to bottom of viewport */
-  html, body {
-    height: 100%;
-  }
-  .siteRoot {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .siteContent {
-    padding-top: 3em;
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-  }
-  footer {
-    width: 100%;
-  }
+// const GlobalStyle = createGlobalStyle`
+//   /* http://meyerweb.com/eric/tools/css/reset/
+//    v2.0 | 20110126
+//    License: none (public domain)
+//   */
+//   html, body, div, span, applet, object, iframe,
+//   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+//   a, abbr, acronym, address, big, cite, code,
+//   del, dfn, em, img, ins, kbd, q, s, samp,
+//   small, strike, strong, sub, sup, tt, var,
+//   b, u, i, center,
+//   dl, dt, dd, ol, ul, li,
+//   fieldset, form, label, legend,
+//   table, caption, tbody, tfoot, thead, tr, th, td,
+//   article, aside, canvas, details, embed,
+//   figure, figcaption, footer, header, hgroup,
+//   menu, nav, output, ruby, section, summary,
+//   time, mark, audio, video {
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+//     font-size: 100%;
+//     font: inherit;
+//     vertical-align: baseline;
+//   }
 
-  /* End Fix to Place Footer on Bottom of Viewport */
+//   /* Added to Fix Footer to bottom of viewport */
+//   html, body {
+//     height: 100%;
+//   }
+//   .siteRoot {
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   .siteContent {
+//     padding-top: 3em;
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1 0 auto;
+//   }
+//   footer {
+//     width: 100%;
+//   }
 
-  article, aside, details, figcaption, figure,
-  footer, header, hgroup, menu, nav, section {
-    display: block;
-  }
+//   /* End Fix to Place Footer on Bottom of Viewport */
 
-  @media screen and (min-width: 35em) {
-    html {
-      margin-right: calc(-100vw + 100%);
-      overflow-x: hidden;
-    }
-  }
+//   article, aside, details, figcaption, figure,
+//   footer, header, hgroup, menu, nav, section {
+//     display: block;
+//   }
 
-  ol, ul, li {
-    list-style: none;
-  }
+//   @media screen and (min-width: 35em) {
+//     html {
+//       margin-right: calc(-100vw + 100%);
+//       overflow-x: hidden;
+//     }
+//   }
 
-  blockquote, q {
-    quotes: none;
-  }
+//   ol, ul, li {
+//     list-style: none;
+//   }
 
-  blockquote::before, blockquote::after,
-  q::before, q::after {
-    content: '';
-    content: none;
-  }
+//   blockquote, q {
+//     quotes: none;
+//   }
 
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
+//   blockquote::before, blockquote::after,
+//   q::before, q::after {
+//     content: '';
+//     content: none;
+//   }
 
-  * {
-    box-sizing: border-box;
-  }
+//   table {
+//     border-collapse: collapse;
+//     border-spacing: 0;
+//   }
 
-  body {
-    background: white;
-    line-height: 1;
-    font-size: 100%;
-    font-variant-ligatures: none;
-    text-rendering: optimizeLegibility;
-    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
-    font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
+//   * {
+//     box-sizing: border-box;
+//   }
 
-  img {
-    display: block;
-  	width: 100%;
-  	height: auto;
-  }
+//   body {
+//     background: white;
+//     line-height: 1;
+//     font-size: 100%;
+//     font-variant-ligatures: none;
+//     text-rendering: optimizeLegibility;
+//     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+//     font-weight: 400;
+//     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//   }
 
-  .rtTooltipBrandLink a {
-    display: none; !important
-  }
+//   img {
+//     display: block;
+//   	width: 100%;
+//   	height: auto;
+//   }
 
-  .rtTooltipMoreLink {
-    display: none; !important
-  }
+//   .rtTooltipBrandLink a {
+//     display: none; !important
+//   }
 
-  button,
-  input {
-    font-family: inherit;
-    font-size: inherit;
-    background: none;
-    border: none;
-    outline: none;
-    appearance: none;
-    border-radius: 0;
-    resize: none;
-    &:focus {
-      outline: none;
-    }
-    &:invalid {
-      box-shadow: none;
-    }
-  }
-`
+//   .rtTooltipMoreLink {
+//     display: none; !important
+//   }
+
+//   button,
+//   input {
+//     font-family: inherit;
+//     font-size: inherit;
+//     background: none;
+//     border: none;
+//     outline: none;
+//     appearance: none;
+//     border-radius: 0;
+//     resize: none;
+//     &:focus {
+//       outline: none;
+//     }
+//     &:invalid {
+//       box-shadow: none;
+//     }
+//   }
+// `
 export default GlobalStyle
