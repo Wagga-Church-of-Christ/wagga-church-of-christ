@@ -5,20 +5,20 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const allCompletePromise = getNavigationConfig(graphql)
-  .then(navigation => {
-    // console.log(navigation)
+    .then(navigation => {
+      // console.log(navigation)
 
-    let promises = []
-    
-    promises.push(createLandingPage(createPage, navigation))
-    promises.push(createPastorsBlog(createPage, graphql, navigation))
-    promises.push(createSermons(createPage, graphql, navigation))
-    promises.push(createGenericPages(createPage, graphql, navigation))
-    promises.push(createRedirects(createPage, graphql, navigation))
+      let promises = []
 
-    return Promise.all(promises)
-  })
- 
+      promises.push(createLandingPage(createPage, navigation))
+      promises.push(createPastorsBlog(createPage, graphql, navigation))
+      promises.push(createSermons(createPage, graphql, navigation))
+      promises.push(createGenericPages(createPage, graphql, navigation))
+      promises.push(createRedirects(createPage, graphql, navigation))
+
+      return Promise.all(promises)
+    })
+
   return allCompletePromise
 }
 
@@ -75,16 +75,12 @@ function createRedirects(createPage, graphql, navigation) {
   return redirectsPromise
 }
 
-function createLandingPage(createPage, navigation) {
+function createLandingPage(createPage) {
   const landingPagePromise = new Promise((resolve, reject) => {
     // Create main home page
     createPage({
       path: `/`,
-      component: path.resolve(`./src/templates/index.js`),
-      context: {
-        slug: 'home',
-        navigation
-      },
+      component: path.resolve(`./src/components/home/HomePage.tsx`)
     })
     resolve()
   })

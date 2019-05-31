@@ -35,6 +35,8 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-contentful',
       options:

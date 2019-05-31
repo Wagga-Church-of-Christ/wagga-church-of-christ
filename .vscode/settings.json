@@ -1,0 +1,11 @@
+{
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+      79,
+      119
+    ]
+  }

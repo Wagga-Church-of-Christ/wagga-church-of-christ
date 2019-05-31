@@ -72,13 +72,13 @@ let urlMap = {
 // https://stackoverflow.com/a/47776379
 function rafAsync() {
   return new Promise(resolve => {
-      requestAnimationFrame(resolve); //faster than set time out
+    requestAnimationFrame(resolve); //faster than set time out
   });
 }
 
 async function isRefTaggerLoaded() {
   while (window.refTagger.tag === undefined) {
-      await rafAsync()
+    await rafAsync()
   }
   return true;
 }
@@ -89,7 +89,7 @@ function morphBibleLinks(link) {
   // console.log(verseReference)
   let lastSpaceRef = verseReference.lastIndexOf(' ')
   let book = verseReference.substring(0, lastSpaceRef)
-  let chapterVerse = verseReference.substring(lastSpaceRef+1)
+  let chapterVerse = verseReference.substring(lastSpaceRef + 1)
 
   let lastDotRef = chapterVerse.lastIndexOf('.')
   let verse
@@ -103,9 +103,9 @@ function morphBibleLinks(link) {
     let lastDashRef = chapterVerse.lastIndexOf('-')
 
     if (lastDashRef === -1) {
-      verse = chapterVerse.substring(lastDotRef+1)
+      verse = chapterVerse.substring(lastDotRef + 1)
     } else {
-      verse = chapterVerse.substring(lastDotRef+1, lastDashRef)
+      verse = chapterVerse.substring(lastDotRef + 1, lastDashRef)
     }
   }
 
@@ -151,8 +151,23 @@ function observeBibleLinks(mutationList, observer) {
     }
   });
 }
-  
+
 // https://github.com/Faithlife/react-reftagger/blob/81e7868963972fcad4fcd828c345558c12750ce3/index.js
+
+// Copyright (c) 2015, Mike Freyberger
+
+// Permission to use, copy, modify, and/or distribute this software for any
+// purpose with or without fee is hereby granted, provided that the above
+// copyright notice and this permission notice appear in all copies.
+
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+// ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+// OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
 class RefTagger extends React.Component {
   constructor(props) {
     super(props);
@@ -171,10 +186,10 @@ class RefTagger extends React.Component {
 
   update() {
     isRefTaggerLoaded()
-    .then(() => {
-      window.refTagger.tag()
+      .then(() => {
+        window.refTagger.tag()
 
-    });
+      });
   }
 
   addScript() {
@@ -189,14 +204,14 @@ class RefTagger extends React.Component {
     if (window.refTagger === undefined) {
       window.refTagger = {
         settings: {
-          bibleVersion: "NASB",			
+          bibleVersion: "NASB",
           roundCorners: true,
           socialSharing: [],
           tagChapters: true,
-          customStyle : {
+          customStyle: {
             heading: {
-              backgroundColor : "#28476b",
-              color : "#ffffff"
+              backgroundColor: "#28476b",
+              color: "#ffffff"
             }
           }
         }

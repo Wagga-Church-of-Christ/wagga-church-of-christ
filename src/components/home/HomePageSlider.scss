@@ -1,0 +1,18 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import '../variables';
+
+.slick-dots {
+  position: relative;
+  margin-top: -70px;
+  margin-bottom: 30px;
+  color: $theme-secondary-colour;
+}
+
+.slick-dots li button:before {
+  color: $theme-secondary-colour;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $theme-secondary-colour;
+}
