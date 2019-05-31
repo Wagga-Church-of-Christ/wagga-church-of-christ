@@ -10,13 +10,21 @@ interface IHeaderState {
   currentPage: string;
 }
 
+function getCurrentPathName() {
+  if (typeof window !== `undefined`) {
+    return window.location.pathname
+  } else {
+    return "/"
+  }
+}
+
 class Header extends React.Component<IHeaderProps, IHeaderState> {
 
   constructor(props) {
     super(props);
     this.state = {
       collapsed: true,
-      currentPage: ""  // Fix this
+      currentPage: getCurrentPathName()
     }
   }
 
