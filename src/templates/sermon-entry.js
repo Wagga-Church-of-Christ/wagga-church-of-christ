@@ -2,19 +2,18 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
+// import Layout from '../components/Layout'
 import Sermon from '../components/Sermon'
 import Container from '../components/Container'
-import PageBody from '../components/PageBody'
 import PostLinks from '../components/PostLinks'
-import PostDate from '../components/PostDate'
 import SEO from '../components/SEO'
+
+import Template from '../components/template/Template'
 
 const SermonEntryTemplate = ({ data, pageContext }) => {
   const root = '/sermons/'
   const postNode = data.contentfulSermon
-  const navigation = pageContext.navigation
+  // const navigation = pageContext.navigation
 
   const {
     title,
@@ -25,17 +24,19 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
   const next = pageContext.next
 
   return (
-    <Layout navigation={navigation} >
-      <Helmet>
-        <title>{`${title} - ${config.siteTitle}`}</title>
-      </Helmet>
-      <SEO pagePath={slug} postNode={postNode} postSEO root={root} />
+    <Template >
+      <div>
+        <Helmet>
+          <title>{`${title} - ${config.siteTitle}`}</title>
+        </Helmet>
+        <SEO pagePath={slug} postNode={postNode} postSEO root={root} />
 
-      <Container>
-        <Sermon { ...postNode }/>
-      </Container>
-      <PostLinks previous={previous} next={next} root={root} name="Sermon" />
-    </Layout>
+        <Container>
+          <Sermon {...postNode} />
+        </Container>
+        <PostLinks previous={previous} next={next} root={root} name="Sermon" />
+      </div>
+    </Template>
   )
 }
 

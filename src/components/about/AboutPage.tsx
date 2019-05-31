@@ -5,9 +5,7 @@ import PageSidebar from '../page/PageSidebar';
 import PageSection from '../page/PageSection';
 import WelcomeSection from './WelcomeSection';
 import HistorySection from './HistorySection';
-import HistorySectionMore from './HistorySectionMore';
 import WhatWeBelieveSection from './WhatWeBelieveSection';
-import WhatWeBelieveSectionMore from './WhatWeBelieveSectionMore';
 import WhatsOnSection from './WhatsOnSection';
 import FAQSection from './FAQSection';
 import './AboutPage.scss'
@@ -62,7 +60,6 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
             url="/about/history"
             bannerMobilePosition="right">
             <HistorySection />
-            <HistorySectionMore />
           </PageSection>
 
           <PageSection
@@ -71,7 +68,6 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
             url="/about/what-we-believe"
             bannerMobilePosition="center">
             <WhatWeBelieveSection />
-            <WhatWeBelieveSectionMore />
           </PageSection>
 
           <PageSection

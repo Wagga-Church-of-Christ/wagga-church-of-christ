@@ -1,36 +1,40 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import CardList from '../components/CardList'
+// import CardList from '../components/CardList'
 import SermonCard from '../components/SermonCard'
-import Sermon from '../components/Sermon'
+// import Sermon from '../components/Sermon'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 
-const SermonIndexTemplate = ({ data, pageContext}) => {
+import Template from '../components/template/Template'
+
+const SermonIndexTemplate = ({ data, pageContext }) => {
   const root = '/sermons/'
   const posts = data.allContentfulSermon.edges
-  const featuredPost = posts[0].node
+  // const featuredPost = posts[0].node
   const { currentPage } = pageContext
-  const isFirstPage = currentPage === 1
-  const navigation = pageContext.navigation
+  // const isFirstPage = currentPage === 1
+  // const navigation = pageContext.navigation
 
   return (
-    <Layout navigation={navigation} >
-      <SEO root={root} />
-      <Helmet>
-        <title>{`Sermons - Page ${currentPage}`}</title>
-      </Helmet>
-      <Container>
-        {posts.map(({ node: post }) => (
-          <SermonCard key={post.id} {...post} root={root} />
-        ))}
-      </Container>
-      <Pagination context={pageContext} root={root} />
-    </Layout>
+    <Template>
+      <div>
+        <SEO root={root} />
+        <Helmet>
+          <title>{`Sermons - Page ${currentPage}`}</title>
+        </Helmet>
+        <Container>
+          {posts.map(({ node: post }) => (
+            <SermonCard key={post.id} {...post} root={root} />
+          ))}
+        </Container>
+        <Pagination context={pageContext} root={root} />
+      </div>
+    </Template>
   )
 }
 

@@ -23,7 +23,7 @@ const Footer = (props) => {
           </div> */}
         </div>
         <div className="col-sm d-none d-sm-none d-md-none d-lg-block">
-          <img alt="footer-logo" className="footer-logo float-right" src="logos/logo-512.png" />
+          <img alt="footer-logo" className="footer-logo float-right" src="/logos/logo-512.png" />
         </div>
       </div>
     </div>

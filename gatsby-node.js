@@ -4,26 +4,11 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-
   const allComplete = Promise.all([
     createHomePage(createPage),
-    createAboutUsPage(createPage)
+    createAboutUsPage(createPage),
+    createSermons(createPage, graphql)
   ])
-
-  // const allCompletePromise = getNavigationConfig(graphql)
-  //   .then(navigation => {
-  //     // console.log(navigation)
-
-  //     let promises = []
-
-  //     promises.push(createHomePage(createPage))
-  //     // promises.push(createPastorsBlog(createPage, graphql, navigation))
-  //     // promises.push(createSermons(createPage, graphql, navigation))
-  //     // promises.push(createGenericPages(createPage, graphql, navigation))
-  //     // promises.push(createRedirects(createPage, graphql, navigation))
-
-  //     return Promise.all(promises)
-  //   })
 
   return allComplete
 }
@@ -54,26 +39,76 @@ function createHomePage(createPage) {
 }
 
 
+function createSermons(createPage, graphql) {
+  const promise = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulSermon(
+          sort: { fields: [publishDate], order: DESC }
+          limit: 10000
+        ) {
+          edges {
+            node {
+              slug
+              publishDate
+            }
+          }
+        }
+      }
+    `).then(result => {
+      const posts = result.data.allContentfulSermon.edges
+      const postsPerFirstPage = config.postsPerHomePage
+      const postsPerPage = config.postsPerPage
+      const numPages = Math.ceil(
+        posts.slice(postsPerFirstPage).length / postsPerPage
+      )
 
-// function getNavigationConfig(graphql) {
-//   const navigationPromise = new Promise((resolve, reject) => {
-//     graphql(`
-//       {
-//         contentfulConfiguration(name: {eq: "navigation"}) {
-//           data {
-//             text
-//             href
-//           }
-//         }
-//       }
-//     `).then(result => {
-//       let navigation = result.data.contentfulConfiguration.data
-//       resolve(navigation)
-//     })
-//   })
+      createPage({
+        path: `/sermons/`,
+        component: path.resolve(`./src/templates/sermon-index.js`),
+        context: {
+          limit: postsPerFirstPage,
+          skip: 0,
+          numPages: numPages + 1,
+          currentPage: 1
+        },
+      })
 
-//   return navigationPromise
-// }
+      // Create additional pagination on home page if needed
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: `/sermons/${i + 2}/`,
+          component: path.resolve(`./src/templates/sermon-index.js`),
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage + postsPerFirstPage,
+            numPages: numPages + 1,
+            currentPage: i + 2
+          },
+        })
+      })
+
+      // Create each individual post
+      posts.forEach((edge, i) => {
+        const prev = i === 0 ? null : posts[i - 1].node
+        const next = i === posts.length - 1 ? null : posts[i + 1].node
+        createPage({
+          path: `/sermons/${edge.node.slug}/`,
+          component: path.resolve(`./src/templates/sermon-entry.js`),
+          context: {
+            slug: edge.node.slug,
+            prev,
+            next
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
+  return promise
+}
+
 
 // function createRedirects(createPage, graphql, navigation) {
 //   const redirectsPromise = new Promise((resolve, reject) => {
@@ -183,78 +218,7 @@ function createHomePage(createPage) {
 //   return pastorsBlogPromise
 // }
 
-// function createSermons(createPage, graphql, navigation) {
-//   const sermonsPromise = new Promise((resolve, reject) => {
-//     graphql(`
-//       {
-//         allContentfulSermon(
-//           sort: { fields: [publishDate], order: DESC }
-//           limit: 10000
-//         ) {
-//           edges {
-//             node {
-//               slug
-//               publishDate
-//             }
-//           }
-//         }
-//       }
-//     `).then(result => {
-//       const posts = result.data.allContentfulSermon.edges
-//       const postsPerFirstPage = config.postsPerHomePage
-//       const postsPerPage = config.postsPerPage
-//       const numPages = Math.ceil(
-//         posts.slice(postsPerFirstPage).length / postsPerPage
-//       )
 
-//       createPage({
-//         path: `/sermons/`,
-//         component: path.resolve(`./src/templates/sermon-index.js`),
-//         context: {
-//           limit: postsPerFirstPage,
-//           skip: 0,
-//           numPages: numPages + 1,
-//           currentPage: 1,
-//           navigation
-//         },
-//       })
-
-//       // Create additional pagination on home page if needed
-//       Array.from({ length: numPages }).forEach((_, i) => {
-//         createPage({
-//           path: `/sermons/${i + 2}/`,
-//           component: path.resolve(`./src/templates/sermon-index.js`),
-//           context: {
-//             limit: postsPerPage,
-//             skip: i * postsPerPage + postsPerFirstPage,
-//             numPages: numPages + 1,
-//             currentPage: i + 2,
-//             navigation
-//           },
-//         })
-//       })
-
-//       // Create each individual post
-//       posts.forEach((edge, i) => {
-//         const prev = i === 0 ? null : posts[i - 1].node
-//         const next = i === posts.length - 1 ? null : posts[i + 1].node
-//         createPage({
-//           path: `/sermons/${edge.node.slug}/`,
-//           component: path.resolve(`./src/templates/sermon-entry.js`),
-//           context: {
-//             slug: edge.node.slug,
-//             prev,
-//             next,
-//             navigation
-//           },
-//         })
-//       })
-//       resolve()
-//     })
-//   })
-
-//   return sermonsPromise
-// }
 
 // function createGenericPages(createPage, graphql, navigation) {
 //   const pagesPromise = new Promise((resolve, reject) => {
@@ -289,3 +253,22 @@ function createHomePage(createPage) {
 
 
 
+// function getNavigationConfig(graphql) {
+//   const navigationPromise = new Promise((resolve, reject) => {
+//     graphql(`
+//       {
+//         contentfulConfiguration(name: {eq: "navigation"}) {
+//           data {
+//             text
+//             href
+//           }
+//         }
+//       }
+//     `).then(result => {
+//       let navigation = result.data.contentfulConfiguration.data
+//       resolve(navigation)
+//     })
+//   })
+
+//   return navigationPromise
+// }
