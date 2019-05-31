@@ -22,7 +22,7 @@ const Footer = (props) => {
           </div>
         </div>
         <div className="col-sm d-none d-sm-none d-md-none d-lg-block">
-          <img alt="footer-logo" srcSet="img/logo_footer@2x.png 2x" className="footer-logo float-right" src="img/logo_footer.png" />
+          <img alt="footer-logo" className="footer-logo float-right" src="logos/logo-512.png" />
         </div>
       </div>
     </div>

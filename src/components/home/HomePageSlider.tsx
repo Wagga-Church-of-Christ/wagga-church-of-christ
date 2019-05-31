@@ -34,25 +34,25 @@ class HomePageSlider extends React.Component<IHomePageSliderProps, IHomePageSlid
     this.state = {
       padding: this.getPadding(),
       slides: [{
-        "type": "SUNDAY SERIES",
-        "title": "Against The Grain",
-        "subtitle": "A study from Daniel",
-        "url": "/sermons/series/Against%20The%20Grain",
-        "imageUrl": "img/slides/daniel.jpg",
+        "type": "Type name",
+        "title": "A Title",
+        "subtitle": "A subtitle",
+        "url": "/sermons",
+        "imageUrl": "https://images.unsplash.com/photo-1536704231234-beca9772ca68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
         "internalLink": true
       }, {
-        "type": "BIBLE STUDY SERIES",
-        "title": "WHAT IS A BIBLICAL BAPTIST?",
-        "subtitle": "",
-        "url": "/sermons/series/What%20is%20a%20Biblical%20Baptist%3F",
-        "imageUrl": "img/slides/baptist.jpg",
+        "type": "Type name",
+        "title": "A Title",
+        "subtitle": "A subtitle",
+        "url": "/sermons",
+        "imageUrl": "https://images.unsplash.com/photo-1543949223-fd634d634e26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80",
         "internalLink": true
       }, {
-        "type": "GOSPEL SERIES",
-        "title": "WHERE DID IT ALL GO WRONG?",
-        "subtitle": "",
-        "url": "/sermons/series/Where%20did%20it%20all%20go%20wrong%3F",
-        "imageUrl": "img/slides/gowrong.jpg",
+        "type": "Type name",
+        "title": "A Title",
+        "subtitle": "A subtitle",
+        "url": "/sermons",
+        "imageUrl": "https://images.unsplash.com/photo-1545299871-dfb018cf4c32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
         "internalLink": true
       }
       ]

@@ -22,7 +22,7 @@
 @media(min-width: 992px) {
   .image-slide {
     min-height: 400px !important;
-    background-size: contain !important;
+    background-size: cover !important;
   }
 }
 
@@ -89,6 +89,10 @@
   }
 }
 
+.btn-outline-primary {
+  border-color: $theme-secondary-colour !important;
+}
+
 .image-slide-button {
   color:$theme-secondary-colour;
   margin: 0 auto;
@@ -103,7 +107,7 @@
 }
 
 .image-slide-button:active {
-  background-color: $theme-primary-colour  !important;
+  background-color: $theme-primary-colour !important;
   border-color: $theme-primary-colour  !important;
 }
 

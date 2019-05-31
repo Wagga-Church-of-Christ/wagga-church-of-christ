@@ -8,7 +8,7 @@ const HomePageSlide = ({
   subtitle,
   url,
   // subsubtitle,
-  buttonText = "LISTEN AGAIN",
+  buttonText = "A Button",
   target = "_self",
   internalLink = false,
   textColour = "text-white",
@@ -18,11 +18,11 @@ const HomePageSlide = ({
 
   const slideStyle = {
     background: "url(" + imageUrl + ")",
-    backgroundPosition: backgroundPosition
+    backgroundPosition: backgroundPosition,
   }
 
   const buttonWrapperStyle = {
-    // textAlign: "center"
+    textAlign: "center"
   }
 
   let hrStyle = {
@@ -44,9 +44,9 @@ const HomePageSlide = ({
   if (url && internalLink && !fullHeightLink) {
     lowerSection = (
       <div style={buttonWrapperStyle}>
-        {/* <Link to={url} role="button" className={`btn btn-outline-primary image-slide-button center-block ${textColour}`}>
+        <a href={url} role="button" className={`btn btn-outline-primary image-slide-button center-block ${textColour}`}>
           {buttonText}
-        </Link> */}
+        </a>
       </div>
     )
   } else if (url && !fullHeightLink) {

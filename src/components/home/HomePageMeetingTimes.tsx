@@ -9,7 +9,8 @@ const HomePageMeetingTimes = (props) => {
         <div className="home-page-meeting-times">
           <h2>AS A CHURCH WE MEET TOGETHER ON SUNDAYS AT 10:00 AM</h2>
           <br />
-          <h3>Kids church is at 9:15 AM. We pray together at 9:00 AM</h3>
+          <h3>We pray together at 9:00 AM</h3>
+          <h3>Kids church is at 9:15 AM</h3>
           <br />
         </div>
       </div>
