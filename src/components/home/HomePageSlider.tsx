@@ -60,11 +60,12 @@ class HomePageSlider extends React.Component<IHomePageSliderProps, IHomePageSlid
   }
 
   getPadding = () => {
-    if ($(window).width() > 700) {
-      return ($(window).width() - 700) / 2
-    } else {
-      return 0;
-    }
+    // if ($(window).width() > 700) {
+    //   return ($(window).width() - 700) / 2
+    // } else {
+    //   return 0;
+    // }
+    return 0; // Fix this
   }
 
   updateDimensions = () => {

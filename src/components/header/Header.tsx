@@ -16,7 +16,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     super(props);
     this.state = {
       collapsed: true,
-      currentPage: window.location.pathname
+      currentPage: ""  // Fix this
     }
   }
 
