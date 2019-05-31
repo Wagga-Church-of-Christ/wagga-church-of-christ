@@ -6,7 +6,8 @@ interface IHeaderProps {
 }
 
 interface IHeaderState {
-  collapsed: boolean
+  collapsed: boolean;
+  currentPage: string;
 }
 
 class Header extends React.Component<IHeaderProps, IHeaderState> {
@@ -14,7 +15,8 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: true
+      collapsed: true,
+      currentPage: window.location.pathname
     }
   }
 
@@ -51,16 +53,19 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
           <ul className="navbar-nav mr-auto"></ul>
           <ul className="navbar-nav sbc-navbar-content">
             <li className="nav-item">
-              <a href="/about" className="nav-link" onClick={this.navLinkClick}>About Us</a>
+              <a href="/" className={`nav-link ${this.state.currentPage === '/' ? "active" : ""}`} onClick={this.navLinkClick}>Home</a>
             </li>
             <li className="nav-item">
-              <a href="/sermons" className="nav-link" onClick={this.navLinkClick}>Sermons</a>
+              <a href="/about" className={`nav-link ${this.state.currentPage.startsWith('/about') ? "active" : ""}`} onClick={this.navLinkClick}>About Us</a>
             </li>
             <li className="nav-item">
-              <a href="/focus" className="nav-link" onClick={this.navLinkClick}>The Focus</a>
+              <a href="/sermons" className={`nav-link ${this.state.currentPage.startsWith('/sermons') ? "active" : ""}`} onClick={this.navLinkClick}>Sermons</a>
             </li>
             <li className="nav-item">
-              <a href="/contact" className="nav-link" onClick={this.navLinkClick}>Contact</a>
+              <a href="/focus" className={`nav-link ${this.state.currentPage.startsWith('/focus') ? "active" : ""}`} onClick={this.navLinkClick}>The Focus</a>
+            </li>
+            <li className="nav-item">
+              <a href="/contact" className={`nav-link ${this.state.currentPage.startsWith('/contact') ? "active" : ""}`} onClick={this.navLinkClick}>Contact</a>
             </li>
           </ul>
         </div>

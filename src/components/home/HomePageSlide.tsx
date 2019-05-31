@@ -22,7 +22,7 @@ const HomePageSlide = ({
   }
 
   const buttonWrapperStyle = {
-    textAlign: "center"
+    textAlign: "center" as "center"
   }
 
   let hrStyle = {
