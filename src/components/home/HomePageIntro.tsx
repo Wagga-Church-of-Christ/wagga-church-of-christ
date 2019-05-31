@@ -6,7 +6,7 @@ const HomePageIntro = (props) => {
   return (
     <div className="home-page-intro">
       <h2>Welcome</h2>
-      <p>We love Jesus, and believe God has a plan for your life!</p>
+      <p>A welcome text goes here</p>
     </div>
   );
 }

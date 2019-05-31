@@ -1,0 +1,25 @@
+@import '../variables';
+
+.history-section-button {
+  padding: 0;
+  color: $theme-primary-colour;
+}
+
+.history-section-button-bold {
+  font-weight: 700;
+}
+
+.history-section-button:hover {
+  color: $theme-primary-colour;
+  text-decoration: none;
+}
+
+.history-section-button:focus {
+  color: $theme-primary-colour;
+  text-decoration: none;
+}
+
+.history-section-button:active {
+  color: $theme-primary-colour;
+  text-decoration: none;
+}

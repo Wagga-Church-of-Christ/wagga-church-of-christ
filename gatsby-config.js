@@ -38,6 +38,14 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Raleway:100,200,300,400,500,700,800', 'Crimson+Text:400,400i']
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options:
         process.env.NODE_ENV === 'development'
