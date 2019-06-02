@@ -34,6 +34,45 @@ const WhatWeBelieveSection = (props) => {
         witness and service. We promote the unity of all God's people, and we
         are committed to the ultimate goal of unity among all Christians.
       </p>
+
+      <h4>Baptism</h4>
+      <p>
+        We encourage people to follow their commitment to Jesus by expressing
+        their faith through baptism.
+      </p>
+      <p>
+        Baptism is a symbol which marks a turning point in someone's life.
+        When we are baptised, we leave our former life behind, and with God's
+        help, make a new beginning.
+      </p>
+      <h4>Worship</h4>
+      <p>
+        We recognise that worship is an important part of life.
+      </p>
+      <p>
+        Our aim is to provide an environment of worship which is positive, refreshing and renewing.
+      </p>
+      <p>All are welcome to share in our Worship services.</p>
+      <p>
+
+        <ul>
+          <li>
+            Worship is informal and friendly.
+        </li>
+          <li>
+            Services are easy to follow with engaging and interesting preaching
+            from the Bible.
+        </li>
+          <li>
+            We regularly celebrate Communion. By sharing together in the Lords'
+            Supper, we not only remember how important Jesus is to our faith, but
+            also draw close to him for renewal. Communion is a meditative and
+             prayerful part of our worship.
+        </li>
+        </ul>
+
+
+      </p>
     </div>
   )
 }

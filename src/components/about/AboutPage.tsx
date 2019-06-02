@@ -53,14 +53,14 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
             <WelcomeSection />
           </PageSection>
 
-          <PageSection
+          {/* <PageSection
             linkTitle="History"
             bannerTitle="HOW IT ALL BEGAN"
             bannerImageUrl="https://images.unsplash.com/photo-1455723576895-6ab1d5abbcb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
             url="/about/history"
             bannerMobilePosition="right">
             <HistorySection />
-          </PageSection>
+          </PageSection> */}
 
           <PageSection
             linkTitle="What We Believe"
@@ -78,13 +78,13 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
             <WhatsOnSection />
           </PageSection>
 
-          <PageSection
+          {/* <PageSection
             linkTitle="FAQ"
             bannerImageUrl="https://images.unsplash.com/photo-1458419948946-19fb2cc296af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
             url="/about/faq"
             bannerMobilePosition="right">
             <FAQSection />
-          </PageSection>
+          </PageSection> */}
 
         </PageSidebar>
       </Page>

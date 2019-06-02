@@ -8,12 +8,14 @@ const Footer = (props) => {
         <a href="/">Home</a><span className="footer-link-slash">/</span>
         <a href="/about">About Us</a><span className="footer-link-slash">/</span>
         <a href="/sermons">Sermons</a><span className="footer-link-slash">/</span>
-        <a href="/focus">The Focus</a><span className="footer-link-slash">/</span>
+        {/* <a href="/focus">The Focus</a><span className="footer-link-slash">/</span> */}
         <a href="/contact">Contact</a>
       </div>
       <div className="row">
         <div className="col-sm">
           <p>Wagga Church of Christ<br />49 Fernleigh Rd, Turvey Park, 2650<br />2019 &copy; Wagga Church of Christ</p>
+          <br />
+          <p><a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Edit page content</a></p>
         </div>
         <div className="col-sm">
           {/* <p className="footer-social-title">STAY CONNECTED</p>

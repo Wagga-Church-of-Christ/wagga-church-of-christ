@@ -5,7 +5,7 @@ const WelcomeSection = (props) => {
     <div>
       <h2>WELCOME</h2>
       <p>
-        Text goes here.
+        https://www.waggachurchofchrist.org.au/about-us/ goes here
       </p>
     </div>
   )
