@@ -6,7 +6,9 @@ exports.createPages = ({ graphql, actions }) => {
 
   const allComplete = Promise.all([
     createHomePage(createPage),
-    createAboutUsPage(createPage),
+    createWhoWeArePage(createPage),
+    createWhatWeBelievePage(createPage),
+    createWhatsOnPage(createPage),
     createSermons(createPage, graphql)
   ])
 
@@ -14,11 +16,44 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 
-function createAboutUsPage(createPage) {
+function createWhoWeArePage(createPage) {
   const promise = new Promise((resolve, reject) => {
     createPage({
-      path: `/about`,
-      component: path.resolve(`./src/components/about/AboutPage.tsx`)
+      path: `/who-we-are`,
+      component: path.resolve(`./src/components/about/AboutPage.tsx`),
+      context: {
+        defaultSection: 0
+      },
+    })
+    resolve()
+  })
+
+  return promise
+}
+
+function createWhatWeBelievePage(createPage) {
+  const promise = new Promise((resolve, reject) => {
+    createPage({
+      path: `/what-we-believe`,
+      component: path.resolve(`./src/components/about/AboutPage.tsx`),
+      context: {
+        defaultSection: 1
+      },
+    })
+    resolve()
+  })
+
+  return promise
+}
+
+function createWhatsOnPage(createPage) {
+  const promise = new Promise((resolve, reject) => {
+    createPage({
+      path: `/whats-on`,
+      component: path.resolve(`./src/components/about/AboutPage.tsx`),
+      context: {
+        defaultSection: 2
+      },
     })
     resolve()
   })

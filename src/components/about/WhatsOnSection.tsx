@@ -19,7 +19,7 @@ const WhatsOnSection = (props) => {
           <tr><td>Before Church Prayer Meeting</td><td>9:00 am</td></tr>
           <tr><td>Kids Church</td><td>9:15 am</td></tr>
           <tr><td>Church Meeting</td><td>10:00 am</td></tr>
-          <tr><td>Let the Search Begin</td><td>3:30 pm</td></tr>
+          {/* <tr><td>Let the Search Begin</td><td>3:30 pm</td></tr> */}
         </tbody>
       </table>
     </div>

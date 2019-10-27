@@ -3,17 +3,14 @@ import Page from '../page/Page';
 import PageBanner from '../page/PageBanner';
 import PageSidebar from '../page/PageSidebar';
 import PageSection from '../page/PageSection';
-import WelcomeSection from './WelcomeSection';
-import HistorySection from './HistorySection';
+import WhoWeAreSection from './WhoWeAreSection';
 import WhatWeBelieveSection from './WhatWeBelieveSection';
 import WhatsOnSection from './WhatsOnSection';
-import FAQSection from './FAQSection';
 import './AboutPage.scss'
 
 
-
 interface IAboutPageProps {
-
+  defaultSection: number;
 }
 
 interface IAboutPageState {
@@ -21,14 +18,25 @@ interface IAboutPageState {
   currentBannerImage?: string;
   bannerMobilePosition?: string;
   currentSection?: number;
+  defaultSection: number;
 }
 
 
+const AboutPageTemplate = ({ data, pageContext }) => {
+  const { defaultSection } = pageContext
+
+  return (
+    <AboutPage defaultSection={defaultSection}></AboutPage>
+  )
+}
+
 class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
 
-  constructor(props) {
+  constructor(props: IAboutPageProps) {
     super(props);
-    this.state = {}
+    this.state = {
+      defaultSection: props.defaultSection
+    }
   }
 
   handleSectionChange = (bannerImage, title, bannerMobilePosition) => {
@@ -43,48 +51,31 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
     return (
       <Page>
         <PageBanner title={this.state.title} imageUrl={this.state.currentBannerImage} bannerMobilePosition={this.state.bannerMobilePosition} titleColour="white" />
-        <PageSidebar onSectionChange={this.handleSectionChange} currentSection={this.state.currentSection}>
+        <PageSidebar defaultSection={this.state.defaultSection} onSectionChange={this.handleSectionChange} currentSection={this.state.currentSection}>
 
           <PageSection
-            linkTitle="About Us"
+            linkTitle="Who we are"
             bannerImageUrl="https://images.unsplash.com/photo-1521915062729-2969ce9b7a33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-            url="/about"
+            url="/who-we-are"
             bannerMobilePosition="right">
-            <WelcomeSection />
+            <WhoWeAreSection />
           </PageSection>
 
-          {/* <PageSection
-            linkTitle="History"
-            bannerTitle="HOW IT ALL BEGAN"
-            bannerImageUrl="https://images.unsplash.com/photo-1455723576895-6ab1d5abbcb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
-            url="/about/history"
-            bannerMobilePosition="right">
-            <HistorySection />
-          </PageSection> */}
-
           <PageSection
-            linkTitle="What We Believe"
+            linkTitle="What we believe"
             bannerImageUrl="https://images.unsplash.com/photo-1496338406295-3adc3db91a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80"
-            url="/about/what-we-believe"
+            url="/what-we-believe"
             bannerMobilePosition="center">
             <WhatWeBelieveSection />
           </PageSection>
 
           <PageSection
-            linkTitle="What's On"
+            linkTitle="What's on"
             bannerImageUrl="https://images.unsplash.com/photo-1435527173128-983b87201f4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80"
-            url="/about/whats-on"
+            url="/whats-on"
             bannerMobilePosition="center">
             <WhatsOnSection />
           </PageSection>
-
-          {/* <PageSection
-            linkTitle="FAQ"
-            bannerImageUrl="https://images.unsplash.com/photo-1458419948946-19fb2cc296af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            url="/about/faq"
-            bannerMobilePosition="right">
-            <FAQSection />
-          </PageSection> */}
 
         </PageSidebar>
       </Page>
@@ -93,4 +84,4 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
 
 }
 
-export default AboutPage;
+export default AboutPageTemplate;

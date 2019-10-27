@@ -11,7 +11,7 @@ const HomePage = (props) => {
   return (
     <Template>
       <div className="home-page">
-        <HomePageSlider />
+        {/* <HomePageSlider /> */}
         <HomePageIntro />
         <HomePageText />
         <HomePageMeetingTimes />
