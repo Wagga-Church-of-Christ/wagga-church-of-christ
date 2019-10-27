@@ -4,6 +4,7 @@ import './PageSidebar.scss'
 interface IPageSidebarProps {
   onSectionChange: (url: string, title: string, mobilePos: any) => void;
   currentSection: number;
+  defaultSection?: number;
 }
 
 interface IPageSidebarState {
@@ -12,11 +13,11 @@ interface IPageSidebarState {
 }
 
 class PageSidebar extends React.Component<IPageSidebarProps, IPageSidebarState> {
-  constructor(props) {
+  constructor(props: IPageSidebarProps) {
     super(props)
 
     this.state = {
-      currentSection: 0,
+      currentSection: props.defaultSection,
       collapsed: true
     }
   }
@@ -79,7 +80,6 @@ class PageSidebar extends React.Component<IPageSidebarProps, IPageSidebarState> 
   }
 
   renderMobileMenu(links) {
-
     const collapsed = this.state.collapsed;
 
     const buttonContents = collapsed ? "+" : "-"
