@@ -45,16 +45,6 @@ const WhoWeAreSection = (props) => {
         "My wife June and I both came to know Christ in 1972. Since then we  have shared a desire to serve the Lord - no matter where or how! Our time serving with the Institute of Evangelism in Papua New Guinea enabled us to grow and understand other cultures, which has been a blessing in our serving of the Lord and His people."
       </p>
 
-      <img src="/img/steve_and_alison.jpg" className="circle-img"></img>
-
-      <h3>
-        Steve &amp; Alison Gilmour
-      </h3>
-      <p><i>Kids Church / Music Director</i></p>
-      <p>
-        "We love Jesus. It is amazing to think of how much our lives have changed because of his grace and work in us over so many years. We love our family and we love serving in the Kids Church ministry and in the Worship team. We pray for our boys Max and Spencer to know the life that can only be found in Jesus. "
-      </p>
-
       <img src="/img/terry_and_maria.png" className="circle-img"></img>
 
       <h3>
