@@ -147,6 +147,10 @@ const Sermon = ({ title, publishDate, speaker, audioLink, description, ...props 
       <Body>
         <a href={audioLink}>Download this audio (right click here and press "Save link as...")</a>
       </Body>
+  
+      <Body
+        dangerouslySetInnerHTML={{ __html: '<script src="https://hypothes.is/embed.js" async></script>' }}
+      />
     </Wrapper>
   )
 }
