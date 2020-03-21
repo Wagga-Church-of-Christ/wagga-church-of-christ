@@ -17,6 +17,7 @@ import './Template.scss';
 const Template = (props) => {
   return (
     <div>
+      <script src="https://hypothes.is/embed.js" async></script>
       <Helmet>
         <title>{config.siteTitle}</title>
         <meta charSet="utf-8" />
