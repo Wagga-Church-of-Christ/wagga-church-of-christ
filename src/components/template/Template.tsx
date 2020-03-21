@@ -30,7 +30,6 @@ const Template = (props) => {
       </ThemeProvider>
       <GlobalStyle />
       <Footer />
-      <RefTagger />
     </div>
   );
 }
