@@ -35,6 +35,7 @@ const SermonEntryTemplate = ({ data, pageContext }) => {
           <Sermon {...postNode} />
         </Container>
         <PostLinks previous={previous} next={next} root={root} name="Sermon" />
+        <script src="https://hypothes.is/embed.js" async></script>
       </div>
     </Template>
   )
