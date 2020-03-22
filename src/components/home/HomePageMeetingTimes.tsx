@@ -21,17 +21,6 @@ const HomePageMeetingTimes = (props) => {
             by ringing +61 2 8320 4510 
             and when prompted provide the pin 931 759 814 8738#.
           </p>
-          
-          <h2>AS A CHURCH WE MEET TOGETHER ON SUNDAYS AT 10:00 AM</h2>
-          <br />
-          <h3>
-            We pray together at 9:00AM before the service and we pray each
-            Sunday evening.</h3>
-          <h3>7:00PM during daylight savings and 5:00PM
-            standard eastern time.</h3>
-          <br />
-          <h3>Kids church is at 9:15 AM before the service.</h3>
-          <br />
         </div>
       </div>
     </div>
