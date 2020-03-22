@@ -12,7 +12,7 @@ const HomePageMeetingTimes = (props) => {
             We meet as a church online and via a group phone call
             on Sunday's at 10:00 AM.
             You can join the meeting by clicking the following link
-            on either a computer, mobile phone, or tablet
+            on either a computer, mobile phone, or tablet.
           </p>
           <h3>
             <a href="https://meet.google.com/kjs-siny-oow">
