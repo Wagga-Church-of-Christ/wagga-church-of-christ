@@ -13,8 +13,8 @@ const HomePage = (props) => {
       <div className="home-page">
         {/* <HomePageSlider /> */}
         <HomePageIntro />
-        <HomePageText />
         <HomePageMeetingTimes />
+        <HomePageText />
         <Map />
       </div>
     </Template>
