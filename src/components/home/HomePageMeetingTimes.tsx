@@ -18,8 +18,8 @@ const HomePageMeetingTimes = (props) => {
             <a href="https://meet.google.com/kjs-siny-oow"><b>Link to Online Video Conference</b></a>
             
             If it is easier for you, you may also join the meeting
-            by ringing +61 2 8320 4510 
-            and when prompted provide the pin 931 759 814 8738#.
+            by ringing <b>8320 4510</b> 
+            and when prompted provide the pin <b>931 759 814 8738#</b>.
           </p>
         </div>
       </div>
