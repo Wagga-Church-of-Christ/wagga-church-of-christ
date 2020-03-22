@@ -15,7 +15,7 @@ const HomePageMeetingTimes = (props) => {
             
             You can join the meeting by clicking the following link
             on either a computer, mobile phone, or tablet --
-            <a href=https://meet.google.com/kjs-siny-oow><b>Link to Online Video Conference</b></a>
+            <a href="https://meet.google.com/kjs-siny-oow"><b>Link to Online Video Conference</b></a>
             
             If it is easier for you, you may also join the meeting
             by ringing +61 2 8320 4510 
