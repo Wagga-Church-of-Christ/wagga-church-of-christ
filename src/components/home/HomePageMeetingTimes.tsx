@@ -17,7 +17,9 @@ const HomePageMeetingTimes = (props) => {
             on either a computer, mobile phone, or tablet
           </p>
           <h3>
-            <a href="https://meet.google.com/kjs-siny-oow">Link to Online Video Conference! (Meeting Live at 10:00 AM Sundays)</a>
+            <a href="https://meet.google.com/kjs-siny-oow">
+              Link to Online Video Conference! (Meeting Live at 10:00 AM Sundays)
+            </a>
           </h3>
           <p>
             If it is easier for you, you may also join the meeting
