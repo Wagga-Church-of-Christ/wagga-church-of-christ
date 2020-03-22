@@ -18,7 +18,7 @@ const HomePageMeetingTimes = (props) => {
           </p>
           <h3>
             <a href="https://meet.google.com/kjs-siny-oow">
-              Link to Online Video Conference! (Meeting Live at 10:00 AM Sundays)
+              Link to Online Video Conference!<br />(Meeting Live at 10:00 AM Sundays)
             </a>
           </h3>
           <p>
