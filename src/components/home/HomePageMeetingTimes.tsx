@@ -21,7 +21,7 @@ const HomePageMeetingTimes = (props) => {
           </h3>
           <p>
             If it is easier for you, you may also join the meeting
-            using your landline or mobile phone by calling <b>8320 4510</b> and
+            using your landline or mobile phone by calling <b>02 8320 4510</b> and
             when prompted providing the pin <b>931 759 814 8738#</b>.
           </p>
         </div>
