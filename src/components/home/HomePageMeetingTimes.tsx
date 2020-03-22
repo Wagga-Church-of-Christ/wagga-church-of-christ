@@ -11,8 +11,6 @@ const HomePageMeetingTimes = (props) => {
           <p>
             We meet as a church online and via a group phone call
             on Sunday's at 10:00 AM.
-          </p>
-          <p>
             You can join the meeting by clicking the following link
             on either a computer, mobile phone, or tablet
           </p>
