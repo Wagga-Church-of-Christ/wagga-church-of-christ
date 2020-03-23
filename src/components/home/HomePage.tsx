@@ -11,10 +11,8 @@ const HomePage = (props) => {
   return (
     <Template>
       <div className="home-page">
-        {/* <HomePageSlider /> */}
-        <HomePageIntro />
-        <HomePageText />
         <HomePageMeetingTimes />
+        <HomePageText />
         <Map />
       </div>
     </Template>

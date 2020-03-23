@@ -70,17 +70,8 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
               <a href="/what-we-believe" className={`nav-link ${this.state.currentPage.startsWith('/what-we-believe') ? "active" : ""}`} onClick={this.navLinkClick}>What we believe</a>
             </li>
             <li className="nav-item">
-              <a href="/whats-on" className={`nav-link ${this.state.currentPage.startsWith('/whats-on') ? "active" : ""}`} onClick={this.navLinkClick}>What's on</a>
-            </li>
-            <li className="nav-item">
               <a href="/sermons" className={`nav-link ${this.state.currentPage.startsWith('/sermons') ? "active" : ""}`} onClick={this.navLinkClick}>Sermons</a>
             </li>
-            {/* <li className="nav-item">
-              <a href="/focus" className={`nav-link ${this.state.currentPage.startsWith('/focus') ? "active" : ""}`} onClick={this.navLinkClick}>The Focus</a>
-            </li> */}
-            {/* <li className="nav-item">
-              <a href="/contact" className={`nav-link ${this.state.currentPage.startsWith('/contact') ? "active" : ""}`} onClick={this.navLinkClick}>Contact</a>
-            </li> */}
           </ul>
         </div>
       </nav>

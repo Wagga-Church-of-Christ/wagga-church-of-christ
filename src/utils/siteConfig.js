@@ -5,8 +5,8 @@ module.exports = {
   siteDescription:
     'Growing together in Christ to impact our world. Wagga Church of Christ in Turvey Park, Wagga Wagga, NSW.',
   siteUrl: 'https://www.waggachurchofchrist.org.au', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
-  postsPerHomePage: 7, // Number of posts shown on the 1st page of of the index.js template (home page)
-  postsPerPage: 6, // Number of posts shown on paginated pages
+  postsPerHomePage: 30, // Number of posts shown on the 1st page of of the index.js template (home page)
+  postsPerPage: 30, // Number of posts shown on paginated pages
   author: 'Wagga Church of Christ', // Author for RSS author segment and SEO schema
   authorUrl: 'https://www.waggachurchofchrist.org.au/', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@twitter', // Change for Twitter Cards

@@ -8,10 +8,7 @@ const Footer = (props) => {
         <a href="/">Home</a><span className="footer-link-slash">/</span>
         <a href="/who-we-are">Who we are</a><span className="footer-link-slash">/</span>
         <a href="/what-we-believe">What we believe</a><span className="footer-link-slash">/</span>
-        <a href="/whats-on">What's on</a><span className="footer-link-slash">/</span>
         <a href="/sermons">Sermons</a>
-        {/* <a href="/focus">The Focus</a><span className="footer-link-slash">/</span> */}
-        {/* <a href="/contact">Contact</a> */}
       </div>
       <div className="row">
         <div className="col-sm">
@@ -21,11 +18,6 @@ const Footer = (props) => {
         </div>
         <div className="col-sm">
           <p>Contact us: <a href="mailto:waggachurchofchristpastor@gmail.com">waggachurchofchristpastor@gmail.com</a></p>
-          {/* <p className="footer-social-title">STAY CONNECTED</p>
-          <div className="footer-social-links">
-            <a href="https://www.facebook.com/Saintfield-Baptist-Church-105178506183089/"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/SaintfieldBC"><i className="fab fa-twitter"></i></a>
-          </div> */}
         </div>
         <div className="col-sm d-none d-sm-none d-md-none d-lg-block">
           <img alt="footer-logo" className="footer-logo float-right" src="/logos/logo-512.png" />
