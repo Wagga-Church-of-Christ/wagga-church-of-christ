@@ -16,7 +16,7 @@ const HomePageOtherRooms = (props) => {
           </p>
           <h3>
             <a href="https://meet.google.com/kjs-siny-oow">
-              Main Hall (used for church meeting on Sunday)
+              Link for the Main Hall (used for church meeting on Sunday)
             </a>
           </h3>
           <p>
@@ -24,7 +24,7 @@ const HomePageOtherRooms = (props) => {
           </p>
           <h3>
             <a href="https://meet.google.com/puf-mxqk-iua">
-              Prayer Room
+              Link for the Prayer Room
             </a>
           </h3>
           <p>
@@ -32,7 +32,7 @@ const HomePageOtherRooms = (props) => {
           </p>
           <h3>
             <a href="https://meet.google.com/vid-nozn-jbu">
-              Small Group Room 1
+              Link for Small Group Room 1
             </a>
           </h3>
           <p>
@@ -40,7 +40,7 @@ const HomePageOtherRooms = (props) => {
           </p>
           <h3>
             <a href="https://meet.google.com/bzj-pjrx-yvs">
-              Small Group Room 2
+              Link for Small Group Room 2
             </a>
           </h3>
           <p>
