@@ -11,7 +11,7 @@ const embedVideo = () => {
     encodeURIComponent(reqURL) + channelID, function (data) {
       const link = data.items[0].link;
       const id = link.substr(link.indexOf("=") + 1);
-      $("#youtube_video").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
+      $("#youtube_video").attr("src", "https://youtube.com/embed/" + id + "?showinfo=0&rel=0");
     });
 }
 
