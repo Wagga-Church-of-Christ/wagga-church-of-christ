@@ -11,7 +11,10 @@ const HomePageMeetingTimes = (props) => {
           <p>
             We meet as a church online and via a group phone call
             on Sunday's at 10:00 AM followed by watching the YouTube stream
-            (visible below) at 10:30 AM.
+            (visible below) at 10:30 AM. To make the YouTube video full screen
+            press the YouTube button at the bottom right of the video.
+          </p>
+          <p>
             You can join the meeting by clicking the following link
             on either a computer, mobile phone, or tablet.
           </p>
