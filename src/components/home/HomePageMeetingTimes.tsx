@@ -10,7 +10,8 @@ const HomePageMeetingTimes = (props) => {
           <h2>CURRENT COVID-19 ARRANGEMENTS</h2>
           <p>
             We meet as a church online and via a group phone call
-            on Sunday's at 10:00 AM.
+            on Sunday's at 10:00 AM followed by watching the YouTube stream
+            (visible below) at 10:30 AM.
             You can join the meeting by clicking the following link
             on either a computer, mobile phone, or tablet.
           </p>
