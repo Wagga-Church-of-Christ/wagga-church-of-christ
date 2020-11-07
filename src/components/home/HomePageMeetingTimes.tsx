@@ -9,24 +9,11 @@ const HomePageMeetingTimes = (props) => {
         <div className="home-page-meeting-times">
           <h2>CURRENT COVID-19 ARRANGEMENTS</h2>
           <p>
-            We meet as a church online and via a group phone call
-            on Sunday's at 10:00 AM followed by watching the YouTube stream
-            (visible below) at 10:30 AM. To make the YouTube video full screen
-            press the YouTube button at the bottom right of the video.
-          </p>
-          <p>
-            You can join the meeting by clicking the following link
-            on either a computer, mobile phone, or tablet.
-          </p>
-          <h3>
-            <a href="https://meet.google.com/kjs-siny-oow">
-              Link to Online Video Conference!<br />(Meeting Live at 10:00 AM Sundays)
-            </a>
-          </h3>
-          <p>
-            If it is easier for you, you may also join the meeting
-            using your landline or mobile phone by calling <b>02 8320 4510</b> and
-            when prompted providing the pin <b>931 759 814 8738#</b>.
+            We now meet on Sunday mornings at 10 am observing social
+            distancing, hygienic sanitising, and contact tracing protocols.
+            The Google
+            Meets platform is still active. See the links at the bottom of this
+            page for the respective rooms.
           </p>
         </div>
       </div>

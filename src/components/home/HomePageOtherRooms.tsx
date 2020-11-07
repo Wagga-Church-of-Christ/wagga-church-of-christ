@@ -7,20 +7,12 @@ const HomePageOtherRooms = (props) => {
     <div className="row">
       <div className="offset-md-2 col-md-8">
         <div className="home-page-meeting-times">
-          <h2>Other Rooms</h2>
+          <h2>Google Meet Rooms</h2>
           <p>
             To facilitate groups meeting throughout the week in their own
-            meeting rooms we have a total of four rooms. Each of these rooms
-            are outlined below, along with a phone number you can call to dial
+            meeting rooms we have a total of three rooms. Each of these rooms
+            is outlined below, along with a phone number you can call to dial
             in.
-          </p>
-          <h3>
-            <a href="https://meet.google.com/kjs-siny-oow">
-              Link for the Main Hall (used for church meeting on Sunday)
-            </a>
-          </h3>
-          <p>
-            Phone number 02 8320 4510 with the pin 931 759 814 8738#.
           </p>
           <h3>
             <a href="https://meet.google.com/puf-mxqk-iua">
