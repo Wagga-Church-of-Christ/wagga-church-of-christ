@@ -63,7 +63,7 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
 
           <PageSection
             linkTitle="What we believe"
-            bannerImageUrl="https://images.unsplash.com/photo-1496338406295-3adc3db91a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80"
+            bannerImageUrl="/img/sunrise-glory.jpg"
             url="/what-we-believe"
             bannerMobilePosition="center">
             <WhatWeBelieveSection />
