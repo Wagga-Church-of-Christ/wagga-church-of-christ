@@ -12,7 +12,7 @@ const Footer = (props) => {
       </div>
       <div className="row">
         <div className="col-sm">
-          <p>Wagga Church of Christ<br />49 Fernleigh Rd, Turvey Park, 2650<br />2019 &copy; Wagga Church of Christ</p>
+          <p>Wagga Church of Christ<br />49 Fernleigh Rd, Turvey Park, 2650<br />2021 &copy; Wagga Church of Christ</p>
           <br />
           <p><a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Edit page content</a></p>
         </div>

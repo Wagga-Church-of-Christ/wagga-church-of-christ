@@ -25,27 +25,49 @@ class HomePageText extends React.Component {
     return (
       <div className="row">
         <div className="col-md homepage-text about">
-          <iframe id="youtube_video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+          <h3>Welcome to this local expression of what Jesus called "My Church"</h3>
+
+          <p>
+            We are not in the marketplace of ideas, but in the wonder of knowing
+            the Lord Jesus, and of seeking an ever increasing knowledge of Himself
+            personally, and the life which He alone gives.
+          </p>
+          <p>Our objective is that all we do by way of worship and serving
+          our Lord and one another might be an expression of that shared
+          life that He so freely gives us, for His glory.
+          </p>
         </div>
         <div className="col-md homepage-text vision">
-          <h3>We're delighted you've dropped in to our site!</h3>
-          <hr />
+          <h3>Google Meet Rooms</h3>
           <p>
-            Our Mission Statement is Growing together In Christ to Impact Our
-            World. We take this seriously and believe that as Christians, we
-            impact the world around us better when we continue to grow in
-            the likeness and character of Jesus Christ.
-        </p>
+            To facilitate groups meeting throughout the week in their own
+            meeting rooms we have a total of three rooms. Each of these rooms
+            is outlined below, along with a phone number you can call to dial
+            in.
+          </p>
+          <h3>
+            <a href="https://meet.google.com/puf-mxqk-iua">
+              Link for the Prayer Room
+            </a>
+          </h3>
           <p>
-            If you'd like to know more details around who we are and what
-            we believe, or if you’re not familiar with the Australian
-            Churches of Christ, then please visit our About us section
-            where you will be reassured that we are indeed a Bible believing,
-            Gospel teaching Church. Hope to see you soon and I am excited by
-            what God will bring to the fellowship through the gifts He has given you.
-        </p>
+            Phone number 02 8320 4510 with the pin 595 128 845 5210#.
+          </p>
+          <h3>
+            <a href="https://meet.google.com/vid-nozn-jbu">
+              Link for Small Group Room 1
+            </a>
+          </h3>
           <p>
-            The Lord Bless You, <i>Pastor Ross Brinkman</i>
+            Phone number 02 8320 4510 with the pin 784 725 569 7475#.
+          </p>
+          <h3>
+            <a href="https://meet.google.com/bzj-pjrx-yvs">
+              Link for Small Group Room 2
+            </a>
+          </h3>
+          <p>
+            Phone number 02 8320 4510 with the pin 864 600 328 2448#.
           </p>
         </div>
       </div>
