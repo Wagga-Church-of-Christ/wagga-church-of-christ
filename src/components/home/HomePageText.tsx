@@ -25,7 +25,7 @@ class HomePageText extends React.Component {
     return (
       <div className="row">
         <div className="col-md homepage-text about">
-          <iframe id="youtube_video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+
         </div>
         <div className="col-md homepage-text vision">
           <h3>We're delighted you've dropped in to our site!</h3>

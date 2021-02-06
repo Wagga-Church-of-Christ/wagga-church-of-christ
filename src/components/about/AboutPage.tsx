@@ -55,7 +55,7 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
 
           <PageSection
             linkTitle="Who we are"
-            bannerImageUrl="https://images.unsplash.com/photo-1521915062729-2969ce9b7a33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            bannerImageUrl="/img/fire-in-the-sky.jpg"
             url="/who-we-are"
             bannerMobilePosition="right">
             <WhoWeAreSection />
