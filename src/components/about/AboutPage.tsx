@@ -62,9 +62,9 @@ class AboutPage extends React.Component<IAboutPageProps, IAboutPageState> {
           </PageSection>
 
           <PageSection
-            linkTitle="What we believe"
+            linkTitle="Our Confession of Faith"
             bannerImageUrl="/img/sunrise-glory.jpg"
-            url="/what-we-believe"
+            url="/confession-of-faith"
             bannerMobilePosition="center">
             <WhatWeBelieveSection />
           </PageSection>

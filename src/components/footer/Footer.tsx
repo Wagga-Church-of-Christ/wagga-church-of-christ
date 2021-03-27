@@ -7,7 +7,7 @@ const Footer = (props) => {
       <div className="footer-links">
         <a href="/">Home</a><span className="footer-link-slash">/</span>
         <a href="/who-we-are">Who we are</a><span className="footer-link-slash">/</span>
-        <a href="/what-we-believe">What we believe</a><span className="footer-link-slash">/</span>
+        <a href="/confession-of-faith">Confession of Faith</a><span className="footer-link-slash">/</span>
         <a href="/sermons">Sermons</a>
       </div>
       <div className="row">
