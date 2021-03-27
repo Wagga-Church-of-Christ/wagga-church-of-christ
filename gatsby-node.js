@@ -34,7 +34,7 @@ function createWhoWeArePage(createPage) {
 function createWhatWeBelievePage(createPage) {
   const promise = new Promise((resolve, reject) => {
     createPage({
-      path: `/what-we-believe`,
+      path: `/confession-of-faith`,
       component: path.resolve(`./src/components/about/AboutPage.tsx`),
       context: {
         defaultSection: 1
