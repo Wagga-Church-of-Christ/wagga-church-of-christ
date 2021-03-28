@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 // import CardList from '../components/CardList'
 import SermonCard from '../components/SermonCard'
 // import Sermon from '../components/Sermon'
@@ -8,7 +7,6 @@ import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
-import config from '../utils/siteConfig'
 
 import Template from '../components/template/Template'
 
