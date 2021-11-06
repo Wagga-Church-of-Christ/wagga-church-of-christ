@@ -40,9 +40,9 @@ class HomePageText extends React.Component {
         <span className="homepage-text vision">
           <h3>Online Rooms</h3>
           <p>
-            To facilitate groups meeting throughout the week in their own
-            meeting rooms we have a total of three rooms. Each of these rooms
-            is outlined below, along with a phone number you can call to dial
+            To facilitate groups meeting throughout the week
+            we have two online rooms. Both of these rooms
+            are outlined below, along with a phone number you can call to dial
             in.
           </p>
           <h3>
