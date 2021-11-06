@@ -75,10 +75,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-69B316P6VD',
-        head: true,
+        trackingIds: [
+          'G-69B316P6VD'
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
       },
     },
     {
