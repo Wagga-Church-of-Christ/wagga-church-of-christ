@@ -24,7 +24,7 @@ class HomePageText extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md homepage-text about">
+        <span className="homepage-text about">
           <h3>Welcome to this local expression of what Jesus called "My Church"</h3>
 
           <p>
@@ -36,9 +36,9 @@ class HomePageText extends React.Component {
           our Lord and one another might be an expression of that shared
           life that He so freely gives us, for His glory.
           </p>
-        </div>
-        <div className="col-md homepage-text vision">
-          <h3>Google Meet Rooms</h3>
+        </span>
+        <span className="homepage-text vision">
+          <h3>Online Rooms</h3>
           <p>
             To facilitate groups meeting throughout the week in their own
             meeting rooms we have a total of three rooms. Each of these rooms
@@ -51,7 +51,7 @@ class HomePageText extends React.Component {
             </a>
           </h3>
           <p>
-            Phone number 02 8320 4510 with the pin 595 128 845 5210#.
+            Phone number 02 8320 4510 with the pin 595 128 845 5210#
           </p>
           <h3>
             <a href="https://meet.google.com/vid-nozn-jbu">
@@ -59,17 +59,9 @@ class HomePageText extends React.Component {
             </a>
           </h3>
           <p>
-            Phone number 02 8320 4510 with the pin 784 725 569 7475#.
+            Phone number 02 8320 4510 with the pin 784 725 569 7475#
           </p>
-          <h3>
-            <a href="https://meet.google.com/bzj-pjrx-yvs">
-              Link for Small Group Room 2
-            </a>
-          </h3>
-          <p>
-            Phone number 02 8320 4510 with the pin 864 600 328 2448#.
-          </p>
-        </div>
+        </span>
       </div>
     );
   }

@@ -1,31 +1,30 @@
 @import '../variables';
 
-
 .footer {
   padding: 50px 45px;
-  background-color: #e6e6e6;
+  background-color: #ffffff;
   color: black;
   font-family: 'Raleway', sans-serif;
 }
 
-@media(min-width: 992px) {
-  .footer{
+@media (min-width: 992px) {
+  .footer {
     padding: 50px 100px;
   }
 }
 
 .footer-logo {
-  height:100px;
-  width:100px;
+  height: 100px;
+  width: 100px;
 }
 
 .footer-links {
   display: none;
-  padding-bottom:30px;
+  padding-bottom: 30px;
 }
 
 .footer-links a {
-  color:black;
+  color: black;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -40,8 +39,8 @@
   padding-right: 10px;
 }
 
-@media(min-width: 576px) {
-  .footer-links{
+@media (min-width: 576px) {
+  .footer-links {
     display: block;
   }
 }
