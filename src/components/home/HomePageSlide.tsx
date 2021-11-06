@@ -59,7 +59,6 @@ const HomePageSlide = ({
     lowerSection = (
       <div>
         <hr style={hrStyle} />
-        {/* <p className={`image-slide-sub-subtitle ${textColour}`}>{subsubtitle}</p> */}
       </div>
     )
   }
@@ -68,11 +67,6 @@ const HomePageSlide = ({
     <div className="image-slide" style={slideStyle}>
       <div className="row image-slide-fullheight-row">
         <div className="col align-self-center image-slide-content">
-          <p className={`image-slide-type ${textColour}`}>{type}</p>
-          <hr style={hrStyle} />
-          <p className={`image-slide-title ${textColour}`}>{title}</p>
-          <p className={`image-slide-sub-title ${textColour}`}>{subtitle}</p>
-          {lowerSection}
         </div>
       </div>
     </div>
@@ -80,9 +74,7 @@ const HomePageSlide = ({
 
   if (fullHeightLink) {
     return (
-      <a href={url} className="image-slide-link">
-        {slideContents}
-      </a>
+      <></>
     )
   } else {
     return slideContents;

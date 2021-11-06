@@ -1,13 +1,12 @@
 @import '../variables';
 
-
 .homepage-text {
   padding: 50px 45px;
 }
 
-@media(min-width: 992px) {
-  .homepage-text{
-    padding: 50px 100px;
+@media (min-width: 1100px) {
+  .homepage-text {
+    padding: 70px 290px;
   }
 }
 
@@ -17,19 +16,20 @@
 }
 
 .homepage-text.vision {
-  background-color: #93a445;
-  color: black;
+  background-color: #ffffff;
+  color: rgb(82, 82, 82);
 }
 
 .homepage-text h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   text-align: center;
+  font-size: 40px;
 }
 
 .homepage-text p {
   font-family: 'Crimson Text', serif;
-  font-size: 18px;
+  font-size: 25px;
   text-align: center;
 }
 
@@ -39,20 +39,4 @@
 
 .homepage-text.about a {
   color: $theme-secondary-colour;
-}
-
-.homepage-text.vision a {
-  color: black;
-}
-
-.homepage-text.about hr {
-  border: 1px solid $theme-secondary-colour;
-  width: 20%;
-  margin: 15px auto;
-}
-
-.homepage-text.vision hr {
-  border: 1px solid black;
-  width: 20%;
-  margin: 15px auto;
 }
