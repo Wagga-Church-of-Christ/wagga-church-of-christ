@@ -38,6 +38,10 @@ class HomePageText extends React.Component {
           </p>
         </span>
         <span className="homepage-text vision">
+          <h3>Sunday Meeting</h3>
+            We meet together in person at 10 am on Sundays at 49 Fernleigh Rd, Turvey Park NSW 2650
+        </span>
+        <span className="homepage-text vision">
           <h3>Online Rooms</h3>
           <p>
             To facilitate groups meeting throughout the week
