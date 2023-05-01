@@ -39,7 +39,9 @@ class HomePageText extends React.Component {
         </span>
         <span className="homepage-text vision">
           <h3>Sunday Meeting</h3>
+          <p>
             We meet together in person at 10 am on Sundays at 49 Fernleigh Rd, Turvey Park NSW 2650
+          </p>
         </span>
         <span className="homepage-text vision">
           <h3>Online Rooms</h3>
