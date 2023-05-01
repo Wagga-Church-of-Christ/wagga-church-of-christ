@@ -17,7 +17,8 @@ const Footer = (props) => {
           <p><a href="https://app.contentful.com/spaces/ge1yh6v33o8l">Edit page content</a></p>
         </div>
         <div className="col-sm">
-          <p>Contact us: <a href="mailto:ttopscoc@gmail.com">ttopscoc@gmail.com</a></p>
+          <p>Contact us (email): <a href="mailto:ttopscoc@gmail.com">ttopscoc@gmail.com</a></p>
+          <p>Contact us (phone): 02 6925 5661</p>
         </div>
         <div className="col-sm d-none d-sm-none d-md-none d-lg-block">
           <img alt="footer-logo" className="footer-logo float-right" src="/logos/logo-512.png" />
