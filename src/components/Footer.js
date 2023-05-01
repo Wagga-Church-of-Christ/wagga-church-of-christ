@@ -57,7 +57,7 @@ const Footer = () => (
     <List>
       <Item>
         <Links>
-          <a href="mailto:waggachurchofchristpastor@gmail.com">
+          <a href="mailto:ttopscoc@gmail.com">
             Email the Pastor</a>
         </Links>
         <Links>
